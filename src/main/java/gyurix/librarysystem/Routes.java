@@ -2,14 +2,26 @@ package gyurix.librarysystem;
 
 import gyurix.librarysystem.packets.in.Login;
 import gyurix.librarysystem.packets.out.LoginResponse;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
-@RestController
+@Controller
 public class Routes {
-  @PostMapping(path = "/login", consumes = "application/json", produces = "application/json")
-  public LoginResponse login(@RequestBody Login login) {
-    return new LoginResponse(true, "Succesfully Logged In, Welcome " + login.getEmail());
-  }
+    public static final String INDEX_PATH = "/";
+    public static final String INDEX_HTML = "index.html";
+
+    public static final String ABOUT_PATH = "/about";
+    public static final String ABOUT_HTML = "about.html";
+
+    @RequestMapping(INDEX_PATH)
+    public String index() {
+        return INDEX_HTML;
+    }
+
+    @RequestMapping(ABOUT_PATH)
+    public String about() {
+        return ABOUT_HTML;
+    }
 }
