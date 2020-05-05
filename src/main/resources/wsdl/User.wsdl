@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns:tns="http://pis.predmety.fiit.stuba.sk/pis/students/team115user" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+<definitions xmlns:tns="http://pis.predmety.fiit.stuba.sk/pis/students/team115user"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
              xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
              xmlns:ns="http://pis.predmety.fiit.stuba.sk/pis/students/team115user/types" name="Team115User"
              targetNamespace="http://pis.predmety.fiit.stuba.sk/pis/students/team115user"
