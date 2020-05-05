@@ -2,8 +2,6 @@ package gyurix.librarysystem.controllers;
 
 import gyurix.librarysystem.models.User;
 import gyurix.librarysystem.services.user.GetByIdResponse;
-import gyurix.librarysystem.services.user.InsertResponse;
-import gyurix.librarysystem.services.user.UserClient;
 import gyurix.librarysystem.tools.PasswordManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,9 +18,6 @@ public class LoginController {
     private static final String EMAIL_INPUT_ID = "email";
     private static final String PASSWORD_INPUT_ID = "password";
 
-    @Autowired
-    private UserClient userClient;
-
     @RequestMapping(LOGIN_PATH)
     public String getLoginSite(Model model) {
         User user = new User();
@@ -37,9 +32,6 @@ public class LoginController {
         byte[] passwordHash = passwordManager.getPasswordHash(user.getPassword());
         String passwordHashString = passwordManager.hashToString(passwordHash);
         user.setPasswordHash(passwordHashString);
-
-        GetByIdResponse response = userClient.getUser(1);
-        System.out.println(response.getUser());
 
         return LOGIN_HTML;
     }
