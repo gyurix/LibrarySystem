@@ -4,33 +4,34 @@
 <head>
     <meta charset="utf-8">
     <title>Informačný systém knižnice</title>
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
-    <link rel="stylesheet" href="../static/css/style.css" th:href="@{css/style.css}" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet" th:href="@{css/style.css}" type="text/css"/>
 </head>
 
 <body>
 
-    <header>
-        <nav>
-            <ul class="menu">
-                <li><a href="/">Domov</a></li>
-                <li><a href="#">Knižnica</a></li>
-                <li><a href="#">Komentáre</a></li>
-                <li><a href="#">Moje výpožičky</a></li>
-                <li><a href="about.html">O nás</a></li>
-                <li><a href="#">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav>
+        <ul class="menu">
+            <li><a href="/">Domov</a></li>
+            <li><a href="#">Knižnica</a></li>
+            <li><a href="#">Komentáre</a></li>
+            <li><a href="#">Moje výpožičky</a></li>
+            <li><a href="about.html">O nás</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <article>
-        <h1 th:text="${{headerText}}"></h1>
+<article>
+    <h1 th:text="${{headerText}}"></h1>
 
-        <h2>
-            Vami zadaná požifgdfgdfgfdgfadavka nebola nájdená!
-            </p>
-    </article>
-    <footer>COPYRIGHT</footer>
+    <h2>
+        Vami zadaná požifgdfgdfgfdgfadavka nebola nájdená!
+        </p>
+    </h2>
+</article>
+<footer>COPYRIGHT</footer>
 
 </body>
 

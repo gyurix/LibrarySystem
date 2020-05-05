@@ -6,21 +6,21 @@ import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
 @Configuration
 public class Config {
-    @Bean
-    public Jaxb2Marshaller marshaller() {
-        Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
-        marshaller.setContextPath("gyurix.librarysystem.services.user");
+  @Bean
+  public Jaxb2Marshaller marshaller() {
+    Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
+    marshaller.setContextPath("gyurix.librarysystem.services.user");
 
-        return marshaller;
-    }
+    return marshaller;
+  }
 
-    @Bean
-    public SOAPConnector soapConnector(Jaxb2Marshaller marshaller) {
-        SOAPConnector client = new SOAPConnector();
-        client.setDefaultUri("http://pis.predmety.fiit.stuba.sk/pis/ws/Students/Team115User?WSDL");
-        client.setMarshaller(marshaller);
-        client.setUnmarshaller(marshaller);
+  @Bean
+  public SOAPConnector soapConnector(Jaxb2Marshaller marshaller) {
+    SOAPConnector client = new SOAPConnector();
+    client.setDefaultUri("http://pis.predmety.fiit.stuba.sk/pis/ws/Students/Team115User?WSDL");
+    client.setMarshaller(marshaller);
+    client.setUnmarshaller(marshaller);
 
-        return client;
-    }
+    return client;
+  }
 }

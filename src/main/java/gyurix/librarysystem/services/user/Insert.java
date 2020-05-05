@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for insert complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="insert"&gt;
  *   &lt;complexContent&gt;
@@ -32,94 +32,80 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "insert", propOrder = {
-    "teamId",
-    "teamPassword",
-    "user"
+        "teamId",
+        "teamPassword",
+        "user"
 })
 public class Insert {
 
-    @XmlElement(name = "team_id", required = true)
-    protected String teamId;
-    @XmlElement(name = "team_password", required = true)
-    protected String teamPassword;
-    @XmlElement(name = "User", required = true)
-    protected User user;
+  @XmlElement(name = "team_id", required = true)
+  protected String teamId;
+  @XmlElement(name = "team_password", required = true)
+  protected String teamPassword;
+  @XmlElement(name = "User", required = true)
+  protected User user;
 
-    /**
-     * Gets the value of the teamId property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTeamId() {
-        return teamId;
-    }
+  /**
+   * Gets the value of the teamId property.
+   *
+   * @return possible object is
+   * {@link String }
+   */
+  public String getTeamId() {
+    return teamId;
+  }
 
-    /**
-     * Sets the value of the teamId property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTeamId(String value) {
-        this.teamId = value;
-    }
+  /**
+   * Sets the value of the teamId property.
+   *
+   * @param value allowed object is
+   *              {@link String }
+   */
+  public void setTeamId(String value) {
+    this.teamId = value;
+  }
 
-    /**
-     * Gets the value of the teamPassword property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTeamPassword() {
-        return teamPassword;
-    }
+  /**
+   * Gets the value of the teamPassword property.
+   *
+   * @return possible object is
+   * {@link String }
+   */
+  public String getTeamPassword() {
+    return teamPassword;
+  }
 
-    /**
-     * Sets the value of the teamPassword property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTeamPassword(String value) {
-        this.teamPassword = value;
-    }
+  /**
+   * Sets the value of the teamPassword property.
+   *
+   * @param value allowed object is
+   *              {@link String }
+   */
+  public void setTeamPassword(String value) {
+    this.teamPassword = value;
+  }
 
-    /**
-     * Gets the value of the user property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link User }
-     *     
-     */
-    public User getUser() {
-        return user;
-    }
+  /**
+   * Gets the value of the user property.
+   *
+   * @return possible object is
+   * {@link User }
+   */
+  public User getUser() {
+    return user;
+  }
 
-    /**
-     * Sets the value of the user property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link User }
-     *     
-     */
-    public void setUser(User value) {
-        this.user = value;
-    }
+  /**
+   * Sets the value of the user property.
+   *
+   * @param value allowed object is
+   *              {@link User }
+   */
+  public void setUser(User value) {
+    this.user = value;
+  }
 
 }

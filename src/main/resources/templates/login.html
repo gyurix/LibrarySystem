@@ -4,59 +4,59 @@
 <head>
     <meta charset="utf-8">
     <title>Informačný systém knižnice</title>
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
-    <link rel="stylesheet" href="../static/css/style.css" th:href="@{css/style.css}" type="text/css" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet" th:href="@{css/style.css}" type="text/css"/>
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <header>
-        <nav class="menu">
-            <ul class="menu">
-                <li><a href="/">Domov</a></li>
-                <li><a href="#">Knižnica</a></li>
-                <li><a href="#">Komentáre</a></li>
-                <li><a href="#">Moje výpožičky</a></li>
-                <li><a href="/about">O nás</a></li>
-                <li><a href="#">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav class="menu">
+        <ul class="menu">
+            <li><a href="/">Domov</a></li>
+            <li><a href="#">Knižnica</a></li>
+            <li><a href="#">Komentáre</a></li>
+            <li><a href="#">Moje výpožičky</a></li>
+            <li><a href="/about">O nás</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <article class="login-article">
-        <h1>Prihláste sa</h1>
+<article class="login-article">
+    <h1>Prihláste sa</h1>
 
-        <form class="w3-container" th:action="@{/login}" th:object="${user}" method="post">
+    <form class="w3-container" method="post" th:action="@{/login}" th:object="${user}">
 
-            <label>Email</label>
-            <input class="w3-input" type="email" id="email" name="email">
+        <label>Email</label>
+        <input class="w3-input" id="email" name="email" type="email">
 
-            <label>Heslo</label>
-            <input class="w3-input" type="password" id="password" name="password">
+        <label>Heslo</label>
+        <input class="w3-input" id="password" name="password" type="password">
 
-            <button class="w3-button w3-red w3-round-large login-button" type="submit">Prihlásiť sa</button>
-        </form>
+        <button class="w3-button w3-red w3-round-large login-button" type="submit">Prihlásiť sa</button>
+    </form>
 
-        <!-- <form th:action="@{/signin}" method="post" th:object="${user}">
+    <!-- <form th:action="@{/signin}" method="post" th:object="${user}">
 
-            <div>
-                <div class="login-input">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" th:field="*{email}"> </input>
-                </div>
-
-                <div class="login-input">
-                    <label for="password">Heslo</label>
-                    <input type="password" id="password" th:field="*{password}"> </input>
-                </div>
+        <div>
+            <div class="login-input">
+                <label for="email">Email</label>
+                <input type="email" id="email" th:field="*{email}"> </input>
             </div>
-        </form> -->
 
-        <!-- <a href="#" class="btn">Zabudol som heslo</a> -->
+            <div class="login-input">
+                <label for="password">Heslo</label>
+                <input type="password" id="password" th:field="*{password}"> </input>
+            </div>
+        </div>
+    </form> -->
 
-    </article>
-    <footer>COPYRIGHT</footer>
+    <!-- <a href="#" class="btn">Zabudol som heslo</a> -->
+
+</article>
+<footer>COPYRIGHT</footer>
 
 </body>
 

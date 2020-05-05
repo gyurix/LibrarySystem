@@ -15,9 +15,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for getById complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="getById"&gt;
  *   &lt;complexContent&gt;
@@ -29,31 +29,27 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getById", propOrder = {
-    "id"
+        "id"
 })
 public class GetById {
 
-    protected int id;
+  protected int id;
 
-    /**
-     * Gets the value of the id property.
-     * 
-     */
-    public int getId() {
-        return id;
-    }
+  /**
+   * Gets the value of the id property.
+   */
+  public int getId() {
+    return id;
+  }
 
-    /**
-     * Sets the value of the id property.
-     * 
-     */
-    public void setId(int value) {
-        this.id = value;
-    }
+  /**
+   * Sets the value of the id property.
+   */
+  public void setId(int value) {
+    this.id = value;
+  }
 
 }

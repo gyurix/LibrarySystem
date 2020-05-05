@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for getByIdResponse complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="getByIdResponse"&gt;
  *   &lt;complexContent&gt;
@@ -30,40 +30,34 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getByIdResponse", propOrder = {
-    "user"
+        "user"
 })
 public class GetByIdResponse {
 
-    @XmlElement(required = true)
-    protected User user;
+  @XmlElement(required = true)
+  protected User user;
 
-    /**
-     * Gets the value of the user property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link User }
-     *     
-     */
-    public User getUser() {
-        return user;
-    }
+  /**
+   * Gets the value of the user property.
+   *
+   * @return possible object is
+   * {@link User }
+   */
+  public User getUser() {
+    return user;
+  }
 
-    /**
-     * Sets the value of the user property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link User }
-     *     
-     */
-    public void setUser(User value) {
-        this.user = value;
-    }
+  /**
+   * Sets the value of the user property.
+   *
+   * @param value allowed object is
+   *              {@link User }
+   */
+  public void setUser(User value) {
+    this.user = value;
+  }
 
 }

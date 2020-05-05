@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for getByAttributeValueResponse complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="getByAttributeValueResponse"&gt;
  *   &lt;complexContent&gt;
@@ -30,40 +30,34 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getByAttributeValueResponse", propOrder = {
-    "users"
+        "users"
 })
 public class GetByAttributeValueResponse {
 
-    @XmlElement(required = true)
-    protected ArrayOfUsers users;
+  @XmlElement(required = true)
+  protected ArrayOfUsers users;
 
-    /**
-     * Gets the value of the users property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ArrayOfUsers }
-     *     
-     */
-    public ArrayOfUsers getUsers() {
-        return users;
-    }
+  /**
+   * Gets the value of the users property.
+   *
+   * @return possible object is
+   * {@link ArrayOfUsers }
+   */
+  public ArrayOfUsers getUsers() {
+    return users;
+  }
 
-    /**
-     * Sets the value of the users property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ArrayOfUsers }
-     *     
-     */
-    public void setUsers(ArrayOfUsers value) {
-        this.users = value;
-    }
+  /**
+   * Sets the value of the users property.
+   *
+   * @param value allowed object is
+   *              {@link ArrayOfUsers }
+   */
+  public void setUsers(ArrayOfUsers value) {
+    this.users = value;
+  }
 
 }

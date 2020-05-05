@@ -5,34 +5,34 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class PasswordManager {
-    private static PasswordManager instance = null;
+  private static PasswordManager instance = null;
 
-    private PasswordManager() {
+  private PasswordManager() {
+  }
+
+  public static PasswordManager getInstance() {
+    if (instance == null)
+      instance = new PasswordManager();
+    return instance;
+  }
+
+  public byte[] getPasswordHash(String password) {
+    MessageDigest digest = null;
+    byte[] passwordHash = null;
+    try {
+      digest = MessageDigest.getInstance("SHA-256");
+      passwordHash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
+    } catch (NoSuchAlgorithmException e) {
+      e.printStackTrace();
     }
 
-    public static PasswordManager getInstance() {
-        if (instance == null)
-            instance = new PasswordManager();
-        return instance;
-    }
+    return passwordHash;
+  }
 
-    public byte[] getPasswordHash(String password) {
-        MessageDigest digest = null;
-        byte[] passwordHash = null;
-        try {
-            digest = MessageDigest.getInstance("SHA-256");
-            passwordHash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-
-        return passwordHash;
-    }
-
-    public String hashToString(byte[] hash) {
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < hash.length; i++)
-            stringBuilder.append(Integer.toHexString(Byte.toUnsignedInt(hash[i])));
-        return stringBuilder.toString();
-    }
+  public String hashToString(byte[] hash) {
+    StringBuilder stringBuilder = new StringBuilder();
+    for (byte b : hash)
+      stringBuilder.append(Integer.toHexString(Byte.toUnsignedInt(b)));
+    return stringBuilder.toString();
+  }
 }

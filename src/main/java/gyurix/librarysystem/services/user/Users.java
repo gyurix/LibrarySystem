@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Users complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="Users"&gt;
  *   &lt;complexContent&gt;
@@ -34,130 +34,112 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Users", propOrder = {
-    "id",
-    "name",
-    "email",
-    "passwordHash",
-    "type"
+        "id",
+        "name",
+        "email",
+        "passwordHash",
+        "type"
 })
 public class Users {
 
-    protected int id;
-    @XmlElement(required = true)
-    protected String name;
-    @XmlElement(required = true)
-    protected String email;
-    @XmlElement(required = true)
-    protected String passwordHash;
-    protected int type;
+  @XmlElement(required = true)
+  protected String email;
+  protected int id;
+  @XmlElement(required = true)
+  protected String name;
+  @XmlElement(required = true)
+  protected String passwordHash;
+  protected int type;
 
-    /**
-     * Gets the value of the id property.
-     * 
-     */
-    public int getId() {
-        return id;
-    }
+  /**
+   * Gets the value of the email property.
+   *
+   * @return possible object is
+   * {@link String }
+   */
+  public String getEmail() {
+    return email;
+  }
 
-    /**
-     * Sets the value of the id property.
-     * 
-     */
-    public void setId(int value) {
-        this.id = value;
-    }
+  /**
+   * Sets the value of the email property.
+   *
+   * @param value allowed object is
+   *              {@link String }
+   */
+  public void setEmail(String value) {
+    this.email = value;
+  }
 
-    /**
-     * Gets the value of the name property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getName() {
-        return name;
-    }
+  /**
+   * Gets the value of the id property.
+   */
+  public int getId() {
+    return id;
+  }
 
-    /**
-     * Sets the value of the name property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
+  /**
+   * Sets the value of the id property.
+   */
+  public void setId(int value) {
+    this.id = value;
+  }
 
-    /**
-     * Gets the value of the email property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getEmail() {
-        return email;
-    }
+  /**
+   * Gets the value of the name property.
+   *
+   * @return possible object is
+   * {@link String }
+   */
+  public String getName() {
+    return name;
+  }
 
-    /**
-     * Sets the value of the email property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEmail(String value) {
-        this.email = value;
-    }
+  /**
+   * Sets the value of the name property.
+   *
+   * @param value allowed object is
+   *              {@link String }
+   */
+  public void setName(String value) {
+    this.name = value;
+  }
 
-    /**
-     * Gets the value of the passwordHash property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPasswordHash() {
-        return passwordHash;
-    }
+  /**
+   * Gets the value of the passwordHash property.
+   *
+   * @return possible object is
+   * {@link String }
+   */
+  public String getPasswordHash() {
+    return passwordHash;
+  }
 
-    /**
-     * Sets the value of the passwordHash property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPasswordHash(String value) {
-        this.passwordHash = value;
-    }
+  /**
+   * Sets the value of the passwordHash property.
+   *
+   * @param value allowed object is
+   *              {@link String }
+   */
+  public void setPasswordHash(String value) {
+    this.passwordHash = value;
+  }
 
-    /**
-     * Gets the value of the type property.
-     * 
-     */
-    public int getType() {
-        return type;
-    }
+  /**
+   * Gets the value of the type property.
+   */
+  public int getType() {
+    return type;
+  }
 
-    /**
-     * Sets the value of the type property.
-     * 
-     */
-    public void setType(int value) {
-        this.type = value;
-    }
+  /**
+   * Sets the value of the type property.
+   */
+  public void setType(int value) {
+    this.type = value;
+  }
 
 }
