@@ -12,10 +12,10 @@ public class LibrarySystem {
     SpringApplication.run(LibrarySystem.class, args);
   }
 
-  @Bean
-  CommandLineRunner lookup(SOAPConnector connector) {
-    return args -> {
-      System.out.println("Loaded, response = " + SOAPConnector.instance.getAll());
-    };
-  }
+//  @Bean
+//  CommandLineRunner lookup(SOAPConnector connector) {
+//    return args -> {
+//      System.out.println("Loaded, response = " + SOAPConnector.instance.getAll());
+//    };
+//  }
 }
