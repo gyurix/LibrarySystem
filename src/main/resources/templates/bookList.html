@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>Informačný systém knižnice</title>
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet" th:href="@{css/style.css}" type="text/css" />
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="/">Domov</a></li>
+                <li><a href="/bookList"><strong>Knižnica</strong></a></li>
+                <li><a href="#">Komentáre</a></li>
+                <li><a href="#">Moje výpožičky</a></li>
+                <li><a href="/about">O nás</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+        <h3>Dostupné knihy</h3>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th> Názov </th>
+                    <th> Autor </th>
+                    <th> Rok vydania </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="book : ${bookList}">
+                    <td><span th:text="${book.title}"> Názov </span></td>
+                    <td><span th:text="${book.author}"> Autor </span></td>
+                    <td><span th:text="${book.year}"> Rok vydania </span></td>
+                </tr>
+            </tbody>
+        </table>
+    </article>
+    <footer>COPYRIGHT</footer>
+
+</body>
+
+</html>
