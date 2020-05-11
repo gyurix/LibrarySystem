@@ -11,6 +11,6 @@ public class TestController {
   public String getSite(Model model) {
     model.addAttribute("headerText", "HELLO");
     System.out.println("Loaded, response = " + SOAPConnector.instance.getAll());
-    return "test.html";
+    return "index.html";
   }
 }
