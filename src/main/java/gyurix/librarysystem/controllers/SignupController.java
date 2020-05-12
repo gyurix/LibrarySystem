@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class SignupController {
     private static final String SIGNUP_PATH = "/signup";
+    private static final String SIGNUP_ADMIN_PATH = "/signupAdmin";
+    private static final String SIGNUP_REVIEWER_PATH = "/signupReviewer";
     private static final String SIGNUP_HTML = "signup.html";
 
     @RequestMapping(SIGNUP_PATH)

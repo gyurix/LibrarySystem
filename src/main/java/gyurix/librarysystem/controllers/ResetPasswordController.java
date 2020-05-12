@@ -2,12 +2,13 @@ package gyurix.librarysystem.controllers;
 
 import gyurix.librarysystem.SOAPConnector;
 import gyurix.librarysystem.models.ResetPasswordModel;
+import gyurix.librarysystem.services.user.User;
+import gyurix.librarysystem.services.user.Users;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 public class ResetPasswordController {
@@ -19,13 +20,21 @@ public class ResetPasswordController {
 
     @RequestMapping(RESET_PATH)
     public String resetPassword(Model model) {
-        model.addAttribute(EMAIL_ATTRIBUTE);
         return RESET_HTML;
     }
 
-    @PostMapping(RESET_HTML)
+    @PostMapping(RESET_PATH)
     public String submitResetPassword(@ModelAttribute(ResetPasswordModel.RESET_PASSWORD_ATTRIBUTE) ResetPasswordModel model, Model mod) {
         String email = model.getEmail();
+        if (email.isEmpty())
+            return RESET_HTML;
+
+        List<Users> user = SOAPConnector.instance.getUser(email).getUsers().getUser();
+        for (Users u : user) {
+            SOAPConnector.instance.sendPasswordRecoveryNotify(u);
+        }
+
+
         mod.addAttribute(EMAIL_ATTRIBUTE, email);
         return RESET_MESSAGE_HTML;
     }

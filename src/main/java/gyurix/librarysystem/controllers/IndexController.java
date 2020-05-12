@@ -22,7 +22,7 @@ public class IndexController {
             model.addAttribute("titleSubheader", "Bol si prihlásený do informačného systému");
             model.addAttribute("buttonText", "Prejsť na komentáre");
             model.addAttribute("loginButton", "Odhlásiť sa");
-            model.addAttribute("loginPath", "https://google.com/");
+            model.addAttribute("loginPath", "/logout");
         }
         else {
             model.addAttribute("welcomeHeader", "Informačný systém knižnice");

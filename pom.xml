@@ -21,7 +21,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <generatePackage>gyurix.librarysystem.services.email</generatePackage>
+                    <generatePackage>gyurix.librarysystem.services.book</generatePackage>
                     <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
                     <schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
                     <schemaIncludes>

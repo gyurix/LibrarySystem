@@ -26,12 +26,7 @@ public class LoginController {
 
     @RequestMapping(LOGIN_PATH)
     public String getLoginSite(Model model, HttpSession session) {
-        List<Book> bookList = new ArrayList<>();
-        bookList.add(new Book("Kniha1", "Autor1", 2001));
-        bookList.add(new Book("Kniha2", "Autor2", 2002));
-        bookList.add(new Book("Kniha3", "Autor3", 2003));
 
-        session.setAttribute("BOOKLIST", bookList);
         return LOGIN_HTML;
     }
 
