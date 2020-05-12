@@ -6,6 +6,7 @@
     <title>Informačný systém knižnice</title>
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <link href="../static/css/style.css" rel="stylesheet" th:href="@{css/style.css}" type="text/css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
@@ -19,6 +20,7 @@
                 <li><a href="#">Moje výpožičky</a></li>
                 <li><a href="/about">O nás</a></li>
                 <li><a href="#">Kontakt</a></li>
+                <li><a href="/login" th:text="${loginButton}">Prihlásiť sa</a></li>
             </ul>
         </nav>
     </header>
@@ -27,7 +29,7 @@
         <h3>Dostupné knihy</h3>
 
 
-        <table>
+        <table class="w3-table-all w3-card-4 bookTable">
             <thead>
                 <tr>
                     <th> Názov </th>

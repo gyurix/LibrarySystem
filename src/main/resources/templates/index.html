@@ -19,20 +19,21 @@
                 <li><a href="#">Moje výpožičky</a></li>
                 <li><a href="/about">O nás</a></li>
                 <li><a href="#">Kontakt</a></li>
+                <li><a href="/login" th:text="${loginButton}" th:href="${loginPath}">Prihlásiť sa</a></li>
             </ul>
         </nav>
     </header>
 
     <article>
-        <h1>Informačný systém knižnice</h1>
+        <h1 th:text="${welcomeHeader}">Informačný systém knižnice</h1>
 
-        <h2>
+        <h2 th:text="${titleSubheader}">
             Pre vstup do knižnice kliknite na tlačidlo Prihlásiť sa
         </h2>
 
-        <a class="btn" href="/login">Prihlásiť sa</a>
+        <a class="btn" href="/login" th:text="${buttonText}">Prihlásiť sa</a>
 
-        <p>
+        <p th:text="${indexParagraph}">
             Po prihlásení, môžete spravovať svoje výpožičky a pridávať komentáre.
         </p>
     </article>

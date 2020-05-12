@@ -88,7 +88,9 @@ p {
 }
 
 .login-article {
-    display: inline-block;
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
 }
 
 #login-email-label,
@@ -98,4 +100,14 @@ p {
 
 .login-button {
     margin: 20px;
+}
+
+.bookTable {
+    margin: 50px;
+    margin-right: 100px;
+    color: black;
+}
+
+.name-input {
+    display: flex;
 }

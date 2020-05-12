@@ -26,15 +26,35 @@
     </header>
 
     <article class="login-article">
-        <h1>Obnovenie hesla</h1>
+        <h1>Registrácia</h1>
 
-        <form class="w3-container" method="post" th:action="@{/resetPassword}" th:object="${reset_password_model}">
+        <form class="w3-container" method="post" th:action="@{/signup}" th:object="${signupForm}">
 
             <label>Email</label>
             <input class="w3-input" id="email" name="email" type="email">
 
-            <button class="w3-button w3-red w3-round-large login-button" type="submit">Obnoviť heslo</button>
+            <span class="name-input">
+                <div>
+                    <label>Meno</label>
+                    <input class="w3-input" id="name" name="name" type="text">
+                </div>
+                
+                <span style="width: 10px;"></span>
+            <div>
+                <label>Priezvisko</label>
+                <input class="w3-input" id="lastname" name="lastname" type="text">
+            </div>
+            </span>
+
+            <label>Heslo</label>
+            <input class="w3-input" id="password" name="password" type="password">
+
+            <label>Zopakuj heslo</label>
+            <input class="w3-input" id="passwordCheck" name="passwordCheck" type="password">
+
+            <button class="w3-button w3-red w3-round-large login-button" type="submit">Registruj sa</button>
         </form>
+        <a href="/login">Prihlásiť sa</a>
 
     </article>
     <footer>COPYRIGHT</footer>
