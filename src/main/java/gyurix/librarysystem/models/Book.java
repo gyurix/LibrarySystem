@@ -15,7 +15,7 @@ public class Book {
 
   public Book(String title, String author, int year, String publisher, String ISBN, String pictureLink) {
     this.title = title;
-    this.commentLink = "/comments?bookId=1";
+    this.commentLink = "/comments?bookId=0";
     this.author = author;
     this.year = year;
     this.publisher = publisher;
@@ -25,6 +25,7 @@ public class Book {
 
   public void setId(int id) {
     this.id = id;
+    this.commentLink = "/comments?bookId=" + Integer.toString(id);
   }
 
   public void setCommentLink(String commentLink) {
