@@ -21,11 +21,11 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <generatePackage>gyurix.librarysystem.services.book</generatePackage>
+                    <generatePackage>gyurix.librarysystem.services.comment</generatePackage>
                     <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
                     <schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
                     <schemaIncludes>
-                        <include>*.wsdl</include>
+                        <include>Kommentar.wsdl</include>
                     </schemaIncludes>
                 </configuration>
             </plugin>

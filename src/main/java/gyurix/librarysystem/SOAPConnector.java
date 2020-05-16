@@ -1,14 +1,21 @@
 package gyurix.librarysystem;
 
+import gyurix.librarysystem.models.Comment;
+import gyurix.librarysystem.services.comment.*;
 import gyurix.librarysystem.services.email.Notify;
 import gyurix.librarysystem.services.email.NotifyResponse;
+import gyurix.librarysystem.services.user.ArrayOfIds;
+import gyurix.librarysystem.services.user.Update;
+import gyurix.librarysystem.services.user.UpdateResponse;
 import gyurix.librarysystem.services.user.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 
 import javax.xml.bind.JAXBElement;
+import java.util.List;
 
+@SuppressWarnings("unchecked")
 public class SOAPConnector extends WebServiceGatewaySupport {
   public static final String DB_WSDL_URL = "http://pis.predmety.fiit.stuba.sk/pis/ws/Students/Team115User";
   public static final String EMAIL_WSDL_URL = "http://pis.predmety.fiit.stuba.sk/pis/ws/NotificationServices/Email";
@@ -26,9 +33,35 @@ public class SOAPConnector extends WebServiceGatewaySupport {
     return getWebServiceTemplate().marshalSendAndReceive(url, request);
   }
 
+  public <T> T commentRequest(Object request, Class<T> responseClass) {
+    return ((JAXBElement<T>) getWebServiceTemplate().marshalSendAndReceive("http://pis.predmety.fiit.stuba.sk/pis/ws/Students/Team115Komentar", request)).getValue();
+  }
+
+  public void deleteComment(int id) {
+    CommentDelete request = new CommentDelete();
+    request.setEntityId(id);
+    request.setTeamId(TEAM_ID);
+    request.setTeamPassword(TEAM_PASSWORD);
+    commentRequest(request, CommentDeleteResponse.class);
+  }
+
   public GetAllResponse getAll() {
     log.info("getAll");
     return ((JAXBElement<GetAllResponse>) getWebServiceTemplate().marshalSendAndReceive("http://pis.predmety.fiit.stuba.sk/pis/ws/Students/Team115User", new GetAll())).getValue();
+  }
+
+  public List<CommentListElement> getCommentsByBook(int bookId) {
+    CommentGetByAttributeValue request = new CommentGetByAttributeValue();
+    request.setAttributeName("bookId");
+    request.setAttributeValue(String.valueOf(bookId));
+    return commentRequest(request, CommentGetByAttributeValueResponse.class).getKomentars().getKomentar();
+  }
+
+  public List<CommentListElement> getCommentsByUser(int userId) {
+    CommentGetByAttributeValue request = new CommentGetByAttributeValue();
+    request.setAttributeName("userID");
+    request.setAttributeValue(String.valueOf(userId));
+    return commentRequest(request, CommentGetByAttributeValueResponse.class).getKomentars().getKomentar();
   }
 
   public GetByAttributeValueResponse getUser(String email) {
@@ -45,6 +78,14 @@ public class SOAPConnector extends WebServiceGatewaySupport {
     getById.setId(id);
 
     return ((JAXBElement<GetByIdResponse>) getWebServiceTemplate().marshalSendAndReceive(DB_WSDL_URL, getById)).getValue();
+  }
+
+  public void insertComment(Comment comment) {
+    CommentInsert request = new CommentInsert();
+    request.setKomentar(comment);
+    request.setTeamId(TEAM_ID);
+    request.setTeamPassword(TEAM_PASSWORD);
+    commentRequest(request, CommentInsertResponse.class);
   }
 
   public InsertResponse insertUser(User user) {
