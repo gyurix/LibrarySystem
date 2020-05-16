@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions name="Team115Komentar" targetNamespace="http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar" xmlns:tns="http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types">
+<definitions xmlns:tns="http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:ns="http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types" name="Team115Komentar"
+             targetNamespace="http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar"
+             xmlns="http://schemas.xmlsoap.org/wsdl/">
     <types>
-        <xsd:schema targetNamespace="http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types" xmlns="http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types">
+        <xsd:schema targetNamespace="http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types"
+                    xmlns="http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types">
             <xsd:complexType name="getById">
                 <xsd:sequence>
                     <xsd:element name="id" type="xsd:int"/>
@@ -45,7 +50,8 @@
             <xsd:element name="getByAttributeValue" nillable="true" type="ns:getByAttributeValue"/>
             <xsd:complexType name="ArrayOfKomentars">
                 <xsd:sequence>
-                    <xsd:element minOccurs="0" maxOccurs="unbounded" name="komentar" nillable="true" type="ns:Komentars"/>
+                    <xsd:element minOccurs="0" maxOccurs="unbounded" name="komentar" nillable="true"
+                                 type="ns:Komentars"/>
                 </xsd:sequence>
             </xsd:complexType>
             <xsd:complexType name="Komentars">
@@ -224,7 +230,8 @@
             </output>
         </operation>
         <operation name="getByAttributeValue">
-            <soap:operation soapAction="http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/#getByAttributeValue"/>
+            <soap:operation
+                    soapAction="http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/#getByAttributeValue"/>
             <input>
                 <soap:body use="literal" namespace="http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar"/>
             </input>
@@ -233,7 +240,8 @@
             </output>
         </operation>
         <operation name="getByNumericCondition">
-            <soap:operation soapAction="http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/#getByNumericCondition"/>
+            <soap:operation
+                    soapAction="http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/#getByNumericCondition"/>
             <input>
                 <soap:body use="literal" namespace="http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar"/>
             </input>
