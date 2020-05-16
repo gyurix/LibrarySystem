@@ -1,9 +1,6 @@
 package gyurix.librarysystem.controllers;
 
-import com.fasterxml.jackson.annotation.JacksonInject;
 import gyurix.librarysystem.SOAPConnector;
-import gyurix.librarysystem.models.LoggedUser;
-import gyurix.librarysystem.services.user.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

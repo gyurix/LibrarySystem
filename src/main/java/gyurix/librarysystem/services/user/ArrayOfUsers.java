@@ -37,7 +37,7 @@ import java.util.List;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ArrayOfUsers", propOrder = {
-        "user"
+  "user"
 })
 @ToString
 public class ArrayOfUsers {

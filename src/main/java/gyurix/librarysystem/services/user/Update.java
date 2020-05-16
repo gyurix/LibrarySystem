@@ -33,10 +33,10 @@ import javax.xml.bind.annotation.*;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "update", propOrder = {
-        "teamId",
-        "teamPassword",
-        "entityId",
-        "user"
+  "teamId",
+  "teamPassword",
+  "entityId",
+  "user"
 })
 @XmlRootElement(name = "update")
 public class Update {

@@ -15,9 +15,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for notifyResponse complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="notifyResponse"&gt;
  *   &lt;complexContent&gt;
@@ -29,31 +29,27 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "notifyResponse", propOrder = {
-    "success"
+  "success"
 })
 public class NotifyResponse {
 
-    protected boolean success;
+  protected boolean success;
 
-    /**
-     * Gets the value of the success property.
-     * 
-     */
-    public boolean isSuccess() {
-        return success;
-    }
+  /**
+   * Gets the value of the success property.
+   */
+  public boolean isSuccess() {
+    return success;
+  }
 
-    /**
-     * Sets the value of the success property.
-     * 
-     */
-    public void setSuccess(boolean value) {
-        this.success = value;
-    }
+  /**
+   * Sets the value of the success property.
+   */
+  public void setSuccess(boolean value) {
+    this.success = value;
+  }
 
 }

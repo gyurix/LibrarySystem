@@ -35,9 +35,9 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "delete", propOrder = {
-        "teamId",
-        "teamPassword",
-        "entityId"
+  "teamId",
+  "teamPassword",
+  "entityId"
 })
 public class Delete {
 

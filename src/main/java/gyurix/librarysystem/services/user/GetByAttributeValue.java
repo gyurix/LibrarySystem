@@ -32,9 +32,9 @@ import javax.xml.bind.annotation.*;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getByAttributeValue", propOrder = {
-        "attributeName",
-        "attributeValue",
-        "ids"
+  "attributeName",
+  "attributeValue",
+  "ids"
 })
 @XmlRootElement(name = "getByAttributeValue")
 public class GetByAttributeValue {

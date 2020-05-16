@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for getByIdResponse complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="getByIdResponse"&gt;
  *   &lt;complexContent&gt;
@@ -30,40 +30,34 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getByIdResponse", propOrder = {
-    "book"
+  "book"
 })
 public class GetByIdResponse {
 
-    @XmlElement(required = true)
-    protected Book book;
+  @XmlElement(required = true)
+  protected Book book;
 
-    /**
-     * Gets the value of the book property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Book }
-     *     
-     */
-    public Book getBook() {
-        return book;
-    }
+  /**
+   * Gets the value of the book property.
+   *
+   * @return possible object is
+   * {@link Book }
+   */
+  public Book getBook() {
+    return book;
+  }
 
-    /**
-     * Sets the value of the book property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Book }
-     *     
-     */
-    public void setBook(Book value) {
-        this.book = value;
-    }
+  /**
+   * Sets the value of the book property.
+   *
+   * @param value allowed object is
+   *              {@link Book }
+   */
+  public void setBook(Book value) {
+    this.book = value;
+  }
 
 }

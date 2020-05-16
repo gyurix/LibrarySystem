@@ -5,35 +5,35 @@
     <meta charset="utf-8">
     <title>Informačný systém knižnice</title>
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-    <link href="../static/css/style.css" rel="stylesheet" th:href="@{css/style.css}" type="text/css" />
+    <link href="../static/css/style.css" rel="stylesheet" th:href="@{css/style.css}" type="text/css"/>
     <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <header>
-        <nav class="menu">
-            <ul class="menu">
-                <li><a href="/">Domov</a></li>
-                <li><a href="/bookList">Knižnica</a></li>
-                <li><a href="#">Komentáre</a></li>
-                <li><a href="#">Moje výpožičky</a></li>
-                <li><a href="/about">O nás</a></li>
-                <li><a href="#">Kontakt</a></li>
-                <li><a href="/login" th:text="${loginButton}">Prihlásiť sa</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav class="menu">
+        <ul class="menu">
+            <li><a href="/">Domov</a></li>
+            <li><a href="/bookList">Knižnica</a></li>
+            <li><a href="#">Komentáre</a></li>
+            <li><a href="#">Moje výpožičky</a></li>
+            <li><a href="/about">O nás</a></li>
+            <li><a href="#">Kontakt</a></li>
+            <li><a href="/login" th:text="${loginButton}">Prihlásiť sa</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <article class="login-article">
-        <h1>Registrácia</h1>
+<article class="login-article">
+    <h1>Registrácia</h1>
 
-        <form class="w3-container" method="post" th:action="@{/signup}" th:object="${signupForm}">
+    <form class="w3-container" method="post" th:action="@{/signup}" th:object="${signupForm}">
 
-            <label>Email</label>
-            <input class="w3-input" id="email" name="email" type="email">
+        <label>Email</label>
+        <input class="w3-input" id="email" name="email" type="email">
 
-            <span class="name-input">
+        <span class="name-input">
                 <div>
                     <label>Meno</label>
                     <input class="w3-input" id="name" name="name" type="text">
@@ -46,18 +46,18 @@
             </div>
             </span>
 
-            <label>Heslo</label>
-            <input class="w3-input" id="password" name="password" type="password">
+        <label>Heslo</label>
+        <input class="w3-input" id="password" name="password" type="password">
 
-            <label>Zopakuj heslo</label>
-            <input class="w3-input" id="passwordCheck" name="passwordCheck" type="password">
+        <label>Zopakuj heslo</label>
+        <input class="w3-input" id="passwordCheck" name="passwordCheck" type="password">
 
-            <button class="w3-button w3-red w3-round-large login-button" type="submit">Registruj sa</button>
-        </form>
-        <a href="/login">Prihlásiť sa</a>
+        <button class="w3-button w3-red w3-round-large login-button" type="submit">Registruj sa</button>
+    </form>
+    <a href="/login">Prihlásiť sa</a>
 
-    </article>
-    <footer>COPYRIGHT</footer>
+</article>
+<footer>COPYRIGHT</footer>
 
 </body>
 

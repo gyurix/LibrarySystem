@@ -40,11 +40,11 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "User", propOrder = {
-        "id",
-        "name",
-        "email",
-        "passwordHash",
-        "type"
+  "id",
+  "name",
+  "email",
+  "passwordHash",
+  "type"
 })
 @Component
 @Scope("session")

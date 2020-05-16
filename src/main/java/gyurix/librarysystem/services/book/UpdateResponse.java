@@ -15,9 +15,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for updateResponse complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="updateResponse"&gt;
  *   &lt;complexContent&gt;
@@ -29,31 +29,27 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "updateResponse", propOrder = {
-    "updates"
+  "updates"
 })
 public class UpdateResponse {
 
-    protected int updates;
+  protected int updates;
 
-    /**
-     * Gets the value of the updates property.
-     * 
-     */
-    public int getUpdates() {
-        return updates;
-    }
+  /**
+   * Gets the value of the updates property.
+   */
+  public int getUpdates() {
+    return updates;
+  }
 
-    /**
-     * Sets the value of the updates property.
-     * 
-     */
-    public void setUpdates(int value) {
-        this.updates = value;
-    }
+  /**
+   * Sets the value of the updates property.
+   */
+  public void setUpdates(int value) {
+    this.updates = value;
+  }
 
 }

@@ -1,59 +1,59 @@
 package gyurix.librarysystem.models;
 
 public class SignupFormModel {
-    public static final String FORM_ATTRIB = "signupForm";
+  public static final String FORM_ATTRIB = "signupForm";
 
-    protected String email;
-    protected String password;
-    protected String passwordCheck;
-    protected String name;
-    protected String lastname;
+  protected String email;
+  protected String lastname;
+  protected String name;
+  protected String password;
+  protected String passwordCheck;
 
-    public SignupFormModel(String email, String password, String passwordCheck, String name, String lastname) {
-        this.email = email;
-        this.password = password;
-        this.passwordCheck = passwordCheck;
-        this.name = name;
-        this.lastname = lastname;
-    }
+  public SignupFormModel(String email, String password, String passwordCheck, String name, String lastname) {
+    this.email = email;
+    this.password = password;
+    this.passwordCheck = passwordCheck;
+    this.name = name;
+    this.lastname = lastname;
+  }
 
-    public String getEmail() {
-        return email;
-    }
+  public String getEmail() {
+    return email;
+  }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public void setEmail(String email) {
+    this.email = email;
+  }
 
-    public String getPassword() {
-        return password;
-    }
+  public String getLastname() {
+    return lastname;
+  }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+  public void setLastname(String lastname) {
+    this.lastname = lastname;
+  }
 
-    public String getPasswordCheck() {
-        return passwordCheck;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setPasswordCheck(String passwordCheck) {
-        this.passwordCheck = passwordCheck;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getPassword() {
+    return password;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setPassword(String password) {
+    this.password = password;
+  }
 
-    public String getLastname() {
-        return lastname;
-    }
+  public String getPasswordCheck() {
+    return passwordCheck;
+  }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
+  public void setPasswordCheck(String passwordCheck) {
+    this.passwordCheck = passwordCheck;
+  }
 }

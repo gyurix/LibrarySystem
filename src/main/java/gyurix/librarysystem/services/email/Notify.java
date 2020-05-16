@@ -13,9 +13,9 @@ import javax.xml.bind.annotation.*;
 
 /**
  * <p>Java class for notify complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="notify"&gt;
  *   &lt;complexContent&gt;
@@ -31,149 +31,127 @@ import javax.xml.bind.annotation.*;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "notify", propOrder = {
-    "teamId",
-    "password",
-    "email",
-    "subject",
-    "message"
+  "teamId",
+  "password",
+  "email",
+  "subject",
+  "message"
 })
 @XmlRootElement(name = "notify")
 public class Notify {
 
-    @XmlElement(name = "team_id", required = true)
-    protected String teamId;
-    @XmlElement(required = true)
-    protected String password;
-    @XmlElement(required = true)
-    protected String email;
-    @XmlElement(required = true)
-    protected String subject;
-    @XmlElement(required = true)
-    protected String message;
+  @XmlElement(required = true)
+  protected String email;
+  @XmlElement(required = true)
+  protected String message;
+  @XmlElement(required = true)
+  protected String password;
+  @XmlElement(required = true)
+  protected String subject;
+  @XmlElement(name = "team_id", required = true)
+  protected String teamId;
 
-    /**
-     * Gets the value of the teamId property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTeamId() {
-        return teamId;
-    }
+  /**
+   * Gets the value of the email property.
+   *
+   * @return possible object is
+   * {@link String }
+   */
+  public String getEmail() {
+    return email;
+  }
 
-    /**
-     * Sets the value of the teamId property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTeamId(String value) {
-        this.teamId = value;
-    }
+  /**
+   * Sets the value of the email property.
+   *
+   * @param value allowed object is
+   *              {@link String }
+   */
+  public void setEmail(String value) {
+    this.email = value;
+  }
 
-    /**
-     * Gets the value of the password property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPassword() {
-        return password;
-    }
+  /**
+   * Gets the value of the message property.
+   *
+   * @return possible object is
+   * {@link String }
+   */
+  public String getMessage() {
+    return message;
+  }
 
-    /**
-     * Sets the value of the password property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPassword(String value) {
-        this.password = value;
-    }
+  /**
+   * Sets the value of the message property.
+   *
+   * @param value allowed object is
+   *              {@link String }
+   */
+  public void setMessage(String value) {
+    this.message = value;
+  }
 
-    /**
-     * Gets the value of the email property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getEmail() {
-        return email;
-    }
+  /**
+   * Gets the value of the password property.
+   *
+   * @return possible object is
+   * {@link String }
+   */
+  public String getPassword() {
+    return password;
+  }
 
-    /**
-     * Sets the value of the email property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEmail(String value) {
-        this.email = value;
-    }
+  /**
+   * Sets the value of the password property.
+   *
+   * @param value allowed object is
+   *              {@link String }
+   */
+  public void setPassword(String value) {
+    this.password = value;
+  }
 
-    /**
-     * Gets the value of the subject property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSubject() {
-        return subject;
-    }
+  /**
+   * Gets the value of the subject property.
+   *
+   * @return possible object is
+   * {@link String }
+   */
+  public String getSubject() {
+    return subject;
+  }
 
-    /**
-     * Sets the value of the subject property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSubject(String value) {
-        this.subject = value;
-    }
+  /**
+   * Sets the value of the subject property.
+   *
+   * @param value allowed object is
+   *              {@link String }
+   */
+  public void setSubject(String value) {
+    this.subject = value;
+  }
 
-    /**
-     * Gets the value of the message property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMessage() {
-        return message;
-    }
+  /**
+   * Gets the value of the teamId property.
+   *
+   * @return possible object is
+   * {@link String }
+   */
+  public String getTeamId() {
+    return teamId;
+  }
 
-    /**
-     * Sets the value of the message property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMessage(String value) {
-        this.message = value;
-    }
+  /**
+   * Sets the value of the teamId property.
+   *
+   * @param value allowed object is
+   *              {@link String }
+   */
+  public void setTeamId(String value) {
+    this.teamId = value;
+  }
 
 }

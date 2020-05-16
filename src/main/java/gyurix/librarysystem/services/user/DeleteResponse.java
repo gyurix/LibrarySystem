@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "deleteResponse", propOrder = {
-        "deleted"
+  "deleted"
 })
 public class DeleteResponse {
 

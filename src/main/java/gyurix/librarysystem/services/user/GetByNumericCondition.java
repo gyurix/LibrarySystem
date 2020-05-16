@@ -36,10 +36,10 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getByNumericCondition", propOrder = {
-        "attributeName",
-        "attributeValue",
-        "mathCondition",
-        "ids"
+  "attributeName",
+  "attributeValue",
+  "mathCondition",
+  "ids"
 })
 public class GetByNumericCondition {
 

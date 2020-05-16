@@ -39,11 +39,11 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Users", propOrder = {
-        "id",
-        "name",
-        "email",
-        "passwordHash",
-        "type"
+  "id",
+  "name",
+  "email",
+  "passwordHash",
+  "type"
 })
 @ToString
 public class Users {

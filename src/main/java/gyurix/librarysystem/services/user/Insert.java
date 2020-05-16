@@ -32,9 +32,9 @@ import javax.xml.bind.annotation.*;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "insert", propOrder = {
-        "teamId",
-        "teamPassword",
-        "user"
+  "teamId",
+  "teamPassword",
+  "user"
 })
 @XmlRootElement(name = "insert")
 public class Insert {

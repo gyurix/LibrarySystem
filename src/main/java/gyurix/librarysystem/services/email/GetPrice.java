@@ -15,9 +15,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for getPrice complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="getPrice"&gt;
  *   &lt;complexContent&gt;
@@ -29,31 +29,27 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getPrice", propOrder = {
-    "amount"
+  "amount"
 })
 public class GetPrice {
 
-    protected int amount;
+  protected int amount;
 
-    /**
-     * Gets the value of the amount property.
-     * 
-     */
-    public int getAmount() {
-        return amount;
-    }
+  /**
+   * Gets the value of the amount property.
+   */
+  public int getAmount() {
+    return amount;
+  }
 
-    /**
-     * Sets the value of the amount property.
-     * 
-     */
-    public void setAmount(int value) {
-        this.amount = value;
-    }
+  /**
+   * Sets the value of the amount property.
+   */
+  public void setAmount(int value) {
+    this.amount = value;
+  }
 
 }

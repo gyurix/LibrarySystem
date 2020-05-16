@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getByIdResponse", propOrder = {
-        "user"
+  "user"
 })
 public class GetByIdResponse {
 

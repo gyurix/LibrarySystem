@@ -8,19 +8,19 @@
 
 package gyurix.librarysystem.services.book;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
  * <p>Java class for ArrayOfBooks complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="ArrayOfBooks"&gt;
  *   &lt;complexContent&gt;
@@ -32,45 +32,41 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ArrayOfBooks", propOrder = {
-    "book"
+  "book"
 })
 public class ArrayOfBooks {
 
-    @XmlElement(nillable = true)
-    protected List<Books> book;
+  @XmlElement(nillable = true)
+  protected List<Books> book;
 
-    /**
-     * Gets the value of the book property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the book property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBook().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Books }
-     * 
-     * 
-     */
-    public List<Books> getBook() {
-        if (book == null) {
-            book = new ArrayList<Books>();
-        }
-        return this.book;
+  /**
+   * Gets the value of the book property.
+   *
+   * <p>
+   * This accessor method returns a reference to the live list,
+   * not a snapshot. Therefore any modification you make to the
+   * returned list will be present inside the JAXB object.
+   * This is why there is not a <CODE>set</CODE> method for the book property.
+   *
+   * <p>
+   * For example, to add a new item, do as follows:
+   * <pre>
+   *    getBook().add(newItem);
+   * </pre>
+   *
+   *
+   * <p>
+   * Objects of the following type(s) are allowed in the list
+   * {@link Books }
+   */
+  public List<Books> getBook() {
+    if (book == null) {
+      book = new ArrayList<Books>();
     }
+    return this.book;
+  }
 
 }

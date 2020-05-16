@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Books complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="Books"&gt;
  *   &lt;complexContent&gt;
@@ -35,166 +35,142 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Books", propOrder = {
-    "id",
-    "name",
-    "author",
-    "isbn",
-    "genre",
-    "publisher"
+  "id",
+  "name",
+  "author",
+  "isbn",
+  "genre",
+  "publisher"
 })
 public class Books {
 
-    protected int id;
-    @XmlElement(required = true)
-    protected String name;
-    @XmlElement(required = true)
-    protected String author;
-    @XmlElement(required = true)
-    protected String isbn;
-    @XmlElement(required = true)
-    protected String genre;
-    @XmlElement(required = true)
-    protected String publisher;
+  @XmlElement(required = true)
+  protected String author;
+  @XmlElement(required = true)
+  protected String genre;
+  protected int id;
+  @XmlElement(required = true)
+  protected String isbn;
+  @XmlElement(required = true)
+  protected String name;
+  @XmlElement(required = true)
+  protected String publisher;
 
-    /**
-     * Gets the value of the id property.
-     * 
-     */
-    public int getId() {
-        return id;
-    }
+  /**
+   * Gets the value of the author property.
+   *
+   * @return possible object is
+   * {@link String }
+   */
+  public String getAuthor() {
+    return author;
+  }
 
-    /**
-     * Sets the value of the id property.
-     * 
-     */
-    public void setId(int value) {
-        this.id = value;
-    }
+  /**
+   * Sets the value of the author property.
+   *
+   * @param value allowed object is
+   *              {@link String }
+   */
+  public void setAuthor(String value) {
+    this.author = value;
+  }
 
-    /**
-     * Gets the value of the name property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getName() {
-        return name;
-    }
+  /**
+   * Gets the value of the genre property.
+   *
+   * @return possible object is
+   * {@link String }
+   */
+  public String getGenre() {
+    return genre;
+  }
 
-    /**
-     * Sets the value of the name property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
+  /**
+   * Sets the value of the genre property.
+   *
+   * @param value allowed object is
+   *              {@link String }
+   */
+  public void setGenre(String value) {
+    this.genre = value;
+  }
 
-    /**
-     * Gets the value of the author property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getAuthor() {
-        return author;
-    }
+  /**
+   * Gets the value of the id property.
+   */
+  public int getId() {
+    return id;
+  }
 
-    /**
-     * Sets the value of the author property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAuthor(String value) {
-        this.author = value;
-    }
+  /**
+   * Sets the value of the id property.
+   */
+  public void setId(int value) {
+    this.id = value;
+  }
 
-    /**
-     * Gets the value of the isbn property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getIsbn() {
-        return isbn;
-    }
+  /**
+   * Gets the value of the isbn property.
+   *
+   * @return possible object is
+   * {@link String }
+   */
+  public String getIsbn() {
+    return isbn;
+  }
 
-    /**
-     * Sets the value of the isbn property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setIsbn(String value) {
-        this.isbn = value;
-    }
+  /**
+   * Sets the value of the isbn property.
+   *
+   * @param value allowed object is
+   *              {@link String }
+   */
+  public void setIsbn(String value) {
+    this.isbn = value;
+  }
 
-    /**
-     * Gets the value of the genre property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getGenre() {
-        return genre;
-    }
+  /**
+   * Gets the value of the name property.
+   *
+   * @return possible object is
+   * {@link String }
+   */
+  public String getName() {
+    return name;
+  }
 
-    /**
-     * Sets the value of the genre property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setGenre(String value) {
-        this.genre = value;
-    }
+  /**
+   * Sets the value of the name property.
+   *
+   * @param value allowed object is
+   *              {@link String }
+   */
+  public void setName(String value) {
+    this.name = value;
+  }
 
-    /**
-     * Gets the value of the publisher property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPublisher() {
-        return publisher;
-    }
+  /**
+   * Gets the value of the publisher property.
+   *
+   * @return possible object is
+   * {@link String }
+   */
+  public String getPublisher() {
+    return publisher;
+  }
 
-    /**
-     * Sets the value of the publisher property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPublisher(String value) {
-        this.publisher = value;
-    }
+  /**
+   * Sets the value of the publisher property.
+   *
+   * @param value allowed object is
+   *              {@link String }
+   */
+  public void setPublisher(String value) {
+    this.publisher = value;
+  }
 
 }
