@@ -79,9 +79,9 @@ public class SOAPConnector extends WebServiceGatewaySupport {
   }
 
   public List<Comment> getCommentsByUser(int userId) {
-    CommentGetAllResponse comments = commentRequest(new CommentGetAll(), CommentGetAllResponse.class);
     List<Users> users = userRequest(new UserGetAll(), UserGetAllResponse.class).getUsers().getUser();
     List<Books> books = bookRequest(new BookGetAll(), BookGetAllResponse.class).getBooks().getBook();
+    CommentGetAllResponse comments = commentRequest(new CommentGetAll(), CommentGetAllResponse.class);
     HashMap<Integer, Books> bookCache = new HashMap<>();
     HashMap<Integer, Users> userCache = new HashMap<>();
     books.forEach(b -> bookCache.put(b.getId(), b));

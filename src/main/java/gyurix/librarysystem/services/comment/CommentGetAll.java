@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "getAll")
-@XmlType(name = "", propOrder = {})
+@XmlType(name = "getAll")
 public class CommentGetAll {
 
 }
