@@ -1,6 +1,5 @@
 package gyurix.librarysystem;
 
-import gyurix.librarysystem.models.Comment;
 import gyurix.librarysystem.services.book.BookGetAll;
 import gyurix.librarysystem.services.book.BookGetAllResponse;
 import gyurix.librarysystem.services.book.Books;
@@ -66,7 +65,7 @@ public class SOAPConnector extends WebServiceGatewaySupport {
     books.forEach(b -> bookCache.put(b.getId(), b));
     users.forEach(u -> userCache.put(u.getId(), u));
     List<Comment> out = new ArrayList<>();
-    comments.getKomentars().getComments().forEach((e) -> {
+    comments.getKomentars().getKomentar().forEach((e) -> {
       if (e.getBookId() == bookId) {
         Books book = bookCache.get(e.getBookId());
         Users user = userCache.get(e.getUserID());
@@ -87,7 +86,7 @@ public class SOAPConnector extends WebServiceGatewaySupport {
     books.forEach(b -> bookCache.put(b.getId(), b));
     users.forEach(u -> userCache.put(u.getId(), u));
     List<Comment> out = new ArrayList<>();
-    comments.getKomentars().getComments().forEach((e) -> {
+    comments.getKomentars().getKomentar().forEach((e) -> {
       if (e.getUserID() == userId) {
         Books book = bookCache.get(e.getBookId());
         Users user = userCache.get(e.getUserID());
@@ -114,7 +113,7 @@ public class SOAPConnector extends WebServiceGatewaySupport {
     return ((JAXBElement<GetByIdResponse>) getWebServiceTemplate().marshalSendAndReceive(DB_WSDL_URL, getById)).getValue();
   }
 
-  public void insertComment(Comment comment) {
+  public void insertComment(CommentOne comment) {
     CommentInsert request = new CommentInsert();
     request.setKomentar(comment);
     request.setTeamId(TEAM_ID);

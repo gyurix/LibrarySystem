@@ -25,7 +25,7 @@
                     <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
                     <schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
                     <schemaIncludes>
-                        <include>Kommentar.wsdl</include>
+                        <include>Komentar.wsdl</include>
                     </schemaIncludes>
                 </configuration>
             </plugin>

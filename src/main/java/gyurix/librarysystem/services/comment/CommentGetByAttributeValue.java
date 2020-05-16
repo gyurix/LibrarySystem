@@ -15,18 +15,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for insert complex type.
+ * <p>Java class for getByAttributeValue complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="insert"&gt;
+ * &lt;complexType name="getByAttributeValue"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="team_id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="team_password" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="Komentar" type="{http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types}Komentar"/&gt;
+ *         &lt;element name="attribute_name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="attribute_value" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="ids" type="{http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types}ArrayOfIds"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,90 +36,90 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "insert", propOrder = {
-    "teamId",
-    "teamPassword",
-    "komentar"
+@XmlType(name = "getByAttributeValue", propOrder = {
+    "attributeName",
+    "attributeValue",
+    "ids"
 })
-public class CommentInsert {
+public class CommentGetByAttributeValue {
 
-    @XmlElement(name = "team_id", required = true)
-    protected String teamId;
-    @XmlElement(name = "team_password", required = true)
-    protected String teamPassword;
-    @XmlElement(name = "Komentar", required = true)
-    protected CommentOne komentar;
+    @XmlElement(name = "attribute_name", required = true)
+    protected String attributeName;
+    @XmlElement(name = "attribute_value", required = true)
+    protected String attributeValue;
+    @XmlElement(required = true)
+    protected ArrayOfIds ids;
 
     /**
-     * Gets the value of the teamId property.
+     * Gets the value of the attributeName property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getTeamId() {
-        return teamId;
+    public String getAttributeName() {
+        return attributeName;
     }
 
     /**
-     * Sets the value of the teamId property.
+     * Sets the value of the attributeName property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setTeamId(String value) {
-        this.teamId = value;
+    public void setAttributeName(String value) {
+        this.attributeName = value;
     }
 
     /**
-     * Gets the value of the teamPassword property.
+     * Gets the value of the attributeValue property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getTeamPassword() {
-        return teamPassword;
+    public String getAttributeValue() {
+        return attributeValue;
     }
 
     /**
-     * Sets the value of the teamPassword property.
+     * Sets the value of the attributeValue property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setTeamPassword(String value) {
-        this.teamPassword = value;
+    public void setAttributeValue(String value) {
+        this.attributeValue = value;
     }
 
     /**
-     * Gets the value of the komentar property.
+     * Gets the value of the ids property.
      * 
      * @return
      *     possible object is
-     *     {@link CommentOne }
+     *     {@link ArrayOfIds }
      *     
      */
-    public CommentOne getKomentar() {
-        return komentar;
+    public ArrayOfIds getIds() {
+        return ids;
     }
 
     /**
-     * Sets the value of the komentar property.
+     * Sets the value of the ids property.
      * 
      * @param value
      *     allowed object is
-     *     {@link CommentOne }
+     *     {@link ArrayOfIds }
      *     
      */
-    public void setKomentar(CommentOne value) {
-        this.komentar = value;
+    public void setIds(ArrayOfIds value) {
+        this.ids = value;
     }
 
 }

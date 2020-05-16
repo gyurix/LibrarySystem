@@ -10,20 +10,21 @@ package gyurix.librarysystem.services.comment;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for updateResponse complex type.
+ * <p>Java class for getByIdResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="updateResponse"&gt;
+ * &lt;complexType name="getByIdResponse"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="updates" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="komentar" type="{http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types}Komentar"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -33,27 +34,36 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "updateResponse", propOrder = {
-    "updates"
+@XmlType(name = "getByIdResponse", propOrder = {
+    "komentar"
 })
-public class CommentUpdateResponse {
+public class CommentGetByIdResponse {
 
-    protected int updates;
+    @XmlElement(required = true)
+    protected CommentOne komentar;
 
     /**
-     * Gets the value of the updates property.
+     * Gets the value of the komentar property.
      * 
+     * @return
+     *     possible object is
+     *     {@link CommentOne }
+     *     
      */
-    public int getUpdates() {
-        return updates;
+    public CommentOne getKomentar() {
+        return komentar;
     }
 
     /**
-     * Sets the value of the updates property.
+     * Sets the value of the komentar property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link CommentOne }
+     *     
      */
-    public void setUpdates(int value) {
-        this.updates = value;
+    public void setKomentar(CommentOne value) {
+        this.komentar = value;
     }
 
 }

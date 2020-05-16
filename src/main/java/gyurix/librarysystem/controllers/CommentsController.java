@@ -1,8 +1,8 @@
 package gyurix.librarysystem.controllers;
 
 import gyurix.librarysystem.SOAPConnector;
-import gyurix.librarysystem.models.Comment;
 import gyurix.librarysystem.models.LoggedUser;
+import gyurix.librarysystem.services.comment.Comment;
 import gyurix.librarysystem.services.user.Users;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
