@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "getByIdResponse", propOrder = {
   "book"
 })
-public class GetByIdResponse {
+public class BookGetByIdResponse {
 
   @XmlElement(required = true)
   protected Book book;

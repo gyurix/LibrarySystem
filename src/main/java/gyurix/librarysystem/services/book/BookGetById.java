@@ -10,6 +10,7 @@ package gyurix.librarysystem.services.book;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -31,10 +32,11 @@ import javax.xml.bind.annotation.XmlType;
  * </pre>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "getById")
 @XmlType(name = "getById", propOrder = {
   "id"
 })
-public class GetById {
+public class BookGetById {
 
   protected int id;
 

@@ -188,33 +188,33 @@ public class ObjectFactory {
   }
 
   /**
-   * Create an instance of {@link GetById }
+   * Create an instance of {@link BookGetById }
    */
-  public GetById createGetById() {
-    return new GetById();
+  public BookGetById createGetById() {
+    return new BookGetById();
   }
 
   /**
-   * Create an instance of {@link JAXBElement }{@code <}{@link GetById }{@code >}}
+   * Create an instance of {@link JAXBElement }{@code <}{@link BookGetById }{@code >}}
    */
   @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115book/types", name = "getById")
-  public JAXBElement<GetById> createGetById(GetById value) {
-    return new JAXBElement<GetById>(_GetById_QNAME, GetById.class, null, value);
+  public JAXBElement<BookGetById> createGetById(BookGetById value) {
+    return new JAXBElement<BookGetById>(_GetById_QNAME, BookGetById.class, null, value);
   }
 
   /**
-   * Create an instance of {@link GetByIdResponse }
+   * Create an instance of {@link BookGetByIdResponse }
    */
-  public GetByIdResponse createGetByIdResponse() {
-    return new GetByIdResponse();
+  public BookGetByIdResponse createGetByIdResponse() {
+    return new BookGetByIdResponse();
   }
 
   /**
-   * Create an instance of {@link JAXBElement }{@code <}{@link GetByIdResponse }{@code >}}
+   * Create an instance of {@link JAXBElement }{@code <}{@link BookGetByIdResponse }{@code >}}
    */
   @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115book/types", name = "getByIdResponse")
-  public JAXBElement<GetByIdResponse> createGetByIdResponse(GetByIdResponse value) {
-    return new JAXBElement<GetByIdResponse>(_GetByIdResponse_QNAME, GetByIdResponse.class, null, value);
+  public JAXBElement<BookGetByIdResponse> createGetByIdResponse(BookGetByIdResponse value) {
+    return new JAXBElement<BookGetByIdResponse>(_GetByIdResponse_QNAME, BookGetByIdResponse.class, null, value);
   }
 
   /**

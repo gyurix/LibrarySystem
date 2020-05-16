@@ -1,12 +1,16 @@
 package gyurix.librarysystem;
 
-import gyurix.librarysystem.services.book.BookGetAll;
-import gyurix.librarysystem.services.book.BookGetAllResponse;
-import gyurix.librarysystem.services.book.Books;
+import gyurix.librarysystem.services.book.*;
 import gyurix.librarysystem.services.comment.*;
 import gyurix.librarysystem.services.email.Notify;
 import gyurix.librarysystem.services.email.NotifyResponse;
 import gyurix.librarysystem.services.user.ArrayOfIds;
+import gyurix.librarysystem.services.user.GetByAttributeValue;
+import gyurix.librarysystem.services.user.GetByAttributeValueResponse;
+import gyurix.librarysystem.services.user.Insert;
+import gyurix.librarysystem.services.user.InsertResponse;
+import gyurix.librarysystem.services.user.Update;
+import gyurix.librarysystem.services.user.UpdateResponse;
 import gyurix.librarysystem.services.user.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,6 +58,12 @@ public class SOAPConnector extends WebServiceGatewaySupport {
   public UserGetAllResponse getAllUsers() {
     log.info("getAll");
     return ((JAXBElement<UserGetAllResponse>) getWebServiceTemplate().marshalSendAndReceive("http://pis.predmety.fiit.stuba.sk/pis/ws/Students/Team115User", new UserGetAll())).getValue();
+  }
+
+  public Book getBookById(int bookId) {
+    BookGetById request = new BookGetById();
+    request.setId(bookId);
+    return bookRequest(request, BookGetByIdResponse.class).getBook();
   }
 
   public List<Comment> getCommentsByBook(int bookId) {

@@ -1,37 +1,17 @@
 package gyurix.librarysystem.models;
 
+import lombok.Data;
+
+@Data
 public class Book {
   protected String author;
   protected String title;
   protected int year;
+  protected String id;
 
   public Book(String title, String author, int year) {
-    this.title = title;
+    this.title = "<a href=\"/comments?bookId=1"+"\">" +title+"</a>";
     this.author = author;
-    this.year = year;
-  }
-
-  public String getAuthor() {
-    return author;
-  }
-
-  public void setAuthor(String author) {
-    this.author = author;
-  }
-
-  public String getTitle() {
-    return title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
-  public int getYear() {
-    return year;
-  }
-
-  public void setYear(int year) {
     this.year = year;
   }
 }
