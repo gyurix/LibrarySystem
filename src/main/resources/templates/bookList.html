@@ -32,7 +32,6 @@
     <table class="w3-table-all w3-card-4 bookTable">
         <thead>
         <tr>
-            <th> ID</th>
             <th> Obálka</th>
             <th> Názov</th>
             <th> Autor</th>
@@ -43,7 +42,6 @@
         </thead>
         <tbody>
         <tr th:each="book : ${bookList}">
-            <td><span th:text="${book.id} + '.'"></span></td>
             <td><img height="150px" th:src="${book.pictureLink}"></td>
             <td><a th:href="${book.commentLink}" th:text="${book.title}"></a></td>
             <td><span th:text="${book.author}"></span></td>

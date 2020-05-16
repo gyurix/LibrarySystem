@@ -13,9 +13,10 @@ public class Book {
   protected int year;
   protected int id;
 
-  public Book(String title, String author, int year, String publisher, String ISBN, String pictureLink) {
+  public Book(int id, String title, String author, int year, String publisher, String ISBN, String pictureLink) {
+    this.id = id;
     this.title = title;
-    this.commentLink = "/comments?bookId=0";
+    this.commentLink = "/comments?bookId=" + Integer.toString(id);
     this.author = author;
     this.year = year;
     this.publisher = publisher;
