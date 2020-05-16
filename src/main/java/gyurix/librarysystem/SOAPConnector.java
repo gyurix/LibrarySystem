@@ -79,8 +79,8 @@ public class SOAPConnector extends WebServiceGatewaySupport {
       if (e.getBookId() == bookId) {
         Books book = bookCache.get(e.getBookId());
         Users user = userCache.get(e.getUserID());
-        e.setBookName(book.getName());
-        e.setUserName(user.getName());
+        e.setBookName(book == null ? "Unknown Book #" + e.getBookId() : book.getName());
+        e.setUserName(user == null ? "Unknown User #" + user.getId() : user.getName());
         out.add(e);
       }
     });
@@ -100,8 +100,8 @@ public class SOAPConnector extends WebServiceGatewaySupport {
       if (e.getUserID() == userId) {
         Books book = bookCache.get(e.getBookId());
         Users user = userCache.get(e.getUserID());
-        e.setBookName(book.getName());
-        e.setUserName(user.getName());
+        e.setBookName(book == null ? "Unknown Book #" + e.getBookId() : book.getName());
+        e.setUserName(user == null ? "Unknown User #" + user.getId() : user.getName());
         out.add(e);
       }
     });

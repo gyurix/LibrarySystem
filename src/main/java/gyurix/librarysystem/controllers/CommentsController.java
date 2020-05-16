@@ -48,7 +48,7 @@ public class CommentsController {
     } else {
       Book book = SOAPConnector.instance.getBookById(Integer.parseInt(bookId));
       model.addAttribute("title", "Komentáre o knihe " + book.getName());
-      List<Comment> commentList = SOAPConnector.instance.getCommentsByBook(book.getId());
+      List<Comment> commentList = SOAPConnector.instance.getCommentsByBook(Integer.parseInt(bookId));
       model.addAttribute("commentList", commentList);
     }
     return HTML;
@@ -71,17 +71,20 @@ public class CommentsController {
       model.addAttribute("loginPath", "/login");
       return LOGIN_HTML;
     }
-    Users loggedUser = (Users) session.getAttribute(LoggedUser.LOGGED_USER_ATTRIB);
-    comment.setAccepted(false);
-    comment.setAcceptedDate(getNow());
-    comment.setAddedDate(getNow());
-    comment.setName("N/A");
-    comment.setBookId(Integer.parseInt((String) session.getAttribute("bookId")));
-    comment.setRating(3);
-    comment.setReviewerNote("N/A");
-    comment.setSpoiler(false);
-    comment.setUserID(loggedUser.getId());
-    SOAPConnector.instance.insertComment(comment);
+    try {
+      Users loggedUser = (Users) session.getAttribute(LoggedUser.LOGGED_USER_ATTRIB);
+      comment.setAccepted(false);
+      comment.setAcceptedDate(getNow());
+      comment.setAddedDate(getNow());
+      comment.setName("N/A");
+      comment.setBookId(Integer.parseInt((String) session.getAttribute("bookId")));
+      comment.setRating(3);
+      comment.setReviewerNote("N/A");
+      comment.setSpoiler(false);
+      comment.setUserID(loggedUser.getId());
+      SOAPConnector.instance.insertComment(comment);
+    } catch (Throwable ignored) {
+    }
     return getComments(model, session, (String) session.getAttribute("bookId"));
   }
 }
