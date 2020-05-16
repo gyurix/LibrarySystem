@@ -8,17 +8,14 @@
 
 package gyurix.librarysystem.services.comment;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
  * <p>Java class for insert complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="insert"&gt;
  *   &lt;complexContent&gt;
@@ -32,94 +29,81 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "insert")
 @XmlType(name = "insert", propOrder = {
-    "teamId",
-    "teamPassword",
-    "komentar"
+  "teamId",
+  "teamPassword",
+  "komentar"
 })
 public class CommentInsert {
 
-    @XmlElement(name = "team_id", required = true)
-    protected String teamId;
-    @XmlElement(name = "team_password", required = true)
-    protected String teamPassword;
-    @XmlElement(name = "Komentar", required = true)
-    protected CommentOne komentar;
+  @XmlElement(name = "Komentar", required = true)
+  protected CommentOne komentar;
+  @XmlElement(name = "team_id", required = true)
+  protected String teamId;
+  @XmlElement(name = "team_password", required = true)
+  protected String teamPassword;
 
-    /**
-     * Gets the value of the teamId property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTeamId() {
-        return teamId;
-    }
+  /**
+   * Gets the value of the komentar property.
+   *
+   * @return possible object is
+   * {@link CommentOne }
+   */
+  public CommentOne getKomentar() {
+    return komentar;
+  }
 
-    /**
-     * Sets the value of the teamId property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTeamId(String value) {
-        this.teamId = value;
-    }
+  /**
+   * Sets the value of the komentar property.
+   *
+   * @param value allowed object is
+   *              {@link CommentOne }
+   */
+  public void setKomentar(CommentOne value) {
+    this.komentar = value;
+  }
 
-    /**
-     * Gets the value of the teamPassword property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTeamPassword() {
-        return teamPassword;
-    }
+  /**
+   * Gets the value of the teamId property.
+   *
+   * @return possible object is
+   * {@link String }
+   */
+  public String getTeamId() {
+    return teamId;
+  }
 
-    /**
-     * Sets the value of the teamPassword property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTeamPassword(String value) {
-        this.teamPassword = value;
-    }
+  /**
+   * Sets the value of the teamId property.
+   *
+   * @param value allowed object is
+   *              {@link String }
+   */
+  public void setTeamId(String value) {
+    this.teamId = value;
+  }
 
-    /**
-     * Gets the value of the komentar property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link CommentOne }
-     *     
-     */
-    public CommentOne getKomentar() {
-        return komentar;
-    }
+  /**
+   * Gets the value of the teamPassword property.
+   *
+   * @return possible object is
+   * {@link String }
+   */
+  public String getTeamPassword() {
+    return teamPassword;
+  }
 
-    /**
-     * Sets the value of the komentar property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CommentOne }
-     *     
-     */
-    public void setKomentar(CommentOne value) {
-        this.komentar = value;
-    }
+  /**
+   * Sets the value of the teamPassword property.
+   *
+   * @param value allowed object is
+   *              {@link String }
+   */
+  public void setTeamPassword(String value) {
+    this.teamPassword = value;
+  }
 
 }

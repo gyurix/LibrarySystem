@@ -26,7 +26,7 @@
 </header>
 
 <article>
-    <h3>${title}</h3>
+    <h3 th:text="${title}">Title</h3>
 
 
     <table class="w3-table-all w3-card-4 bookTable">
@@ -43,54 +43,50 @@
                     <th>Kommentár</th>
                 </tr>
                 </thead>
+
                 <tr>
-                    <td>accepted</td>
-                    <td><span th:text="${comment.accepted}"></span></td>
+                    <td>Kniha</td>
+                    <td colspan="3"><span th:text="${comment.bookName}"></span></td>
                 </tr>
                 <tr>
-                    <td>acceptedDate</td>
-                    <td><span th:text="${comment.acceptedDate}"></span></td>
+                    <td>Hodnotenie</td>
+                    <td colspan="3"><span th:text="${comment.rating}"></span></td>
                 </tr>
                 <tr>
-                    <td>addedDate</td>
+                    <td colspan="4"><span th:text="${comment.text}"></span></td>
+                </tr>
+                <tr>
+                    <td>Pridal</td>
+                    <td><span th:text="${comment.userName}"></span></td>
+                    <td>o</td>
                     <td><span th:text="${comment.addedDate}"></span></td>
                 </tr>
                 <tr>
-                    <td>bookId</td>
-                    <td><span th:text="${comment.bookId}"></span></td>
+                    <td>Poznamka</td>
+                    <td colspan="3"><span th:text="${comment.reviewerNote}"></span></td>
                 </tr>
                 <tr>
-                    <td>bookName</td>
-                    <td><span th:text="${comment.bookName}"></span></td>
+                    <td>Akceptované</td>
+                    <td><span th:text="${comment.accepted}"></span></td>
+                    <td>o</td>
+                    <td><span th:text="${comment.acceptedDate}"></span></td>
                 </tr>
                 <tr>
-                    <td>rating</td>
-                    <td><span th:text="${comment.rating}"></span></td>
-                </tr>
-                <tr>
-                    <td>reviewerNote</td>
-                    <td><span th:text="${comment.reviewerNote}"></span></td>
-                </tr>
-                <tr>
-                    <td>spoiler</td>
+                    <td>Spoiler</td>
                     <td><span th:text="${comment.spoiler}"></span></td>
-                </tr>
-                <tr>
-                    <td>text</td>
-                    <td><span th:text="${comment.text}"></span></td>
-                </tr>
-                <tr>
-                    <td>userID</td>
-                    <td><span th:text="${comment.userID}"></span></td>
-                </tr>
-                <tr>
-                    <td>userName</td>
-                    <td><span th:text="${comment.userName}"></span></td>
                 </tr>
             </table>
         </tr>
         </tbody>
     </table>
+    <p>
+
+    <h1>Pridať komentár</h1>
+    <form class="w3-container" method="post" th:action="@{/postComment}" th:object="${comment}">
+        <textarea cols="60" id="text" name="text" rows="10" type="text"></textarea>
+        <button class="w3-button w3-red w3-round-large login-button" type="submit">Pridať komentár</button>
+    </form>
+    </p>
 </article>
 <footer>COPYRIGHT</footer>
 

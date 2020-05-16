@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for getByIdResponse complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="getByIdResponse"&gt;
  *   &lt;complexContent&gt;
@@ -30,40 +30,34 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getByIdResponse", propOrder = {
-    "komentar"
+  "komentar"
 })
 public class CommentGetByIdResponse {
 
-    @XmlElement(required = true)
-    protected CommentOne komentar;
+  @XmlElement(required = true)
+  protected CommentOne komentar;
 
-    /**
-     * Gets the value of the komentar property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link CommentOne }
-     *     
-     */
-    public CommentOne getKomentar() {
-        return komentar;
-    }
+  /**
+   * Gets the value of the komentar property.
+   *
+   * @return possible object is
+   * {@link CommentOne }
+   */
+  public CommentOne getKomentar() {
+    return komentar;
+  }
 
-    /**
-     * Sets the value of the komentar property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CommentOne }
-     *     
-     */
-    public void setKomentar(CommentOne value) {
-        this.komentar = value;
-    }
+  /**
+   * Sets the value of the komentar property.
+   *
+   * @param value allowed object is
+   *              {@link CommentOne }
+   */
+  public void setKomentar(CommentOne value) {
+    this.komentar = value;
+  }
 
 }

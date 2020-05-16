@@ -8,19 +8,19 @@
 
 package gyurix.librarysystem.services.comment;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
  * <p>Java class for ArrayOfKomentars complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="ArrayOfKomentars"&gt;
  *   &lt;complexContent&gt;
@@ -32,45 +32,41 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ArrayOfKomentars", propOrder = {
-    "komentar"
+  "komentar"
 })
 public class ArrayOfKomentars {
 
-    @XmlElement(nillable = true)
-    protected List<Comment> komentar;
+  @XmlElement(nillable = true)
+  protected List<Comment> komentar;
 
-    /**
-     * Gets the value of the komentar property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the komentar property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getKomentar().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Comment }
-     * 
-     * 
-     */
-    public List<Comment> getKomentar() {
-        if (komentar == null) {
-            komentar = new ArrayList<Comment>();
-        }
-        return this.komentar;
+  /**
+   * Gets the value of the komentar property.
+   *
+   * <p>
+   * This accessor method returns a reference to the live list,
+   * not a snapshot. Therefore any modification you make to the
+   * returned list will be present inside the JAXB object.
+   * This is why there is not a <CODE>set</CODE> method for the komentar property.
+   *
+   * <p>
+   * For example, to add a new item, do as follows:
+   * <pre>
+   *    getKomentar().add(newItem);
+   * </pre>
+   *
+   *
+   * <p>
+   * Objects of the following type(s) are allowed in the list
+   * {@link Comment }
+   */
+  public List<Comment> getKomentar() {
+    if (komentar == null) {
+      komentar = new ArrayList<Comment>();
     }
+    return this.komentar;
+  }
 
 }

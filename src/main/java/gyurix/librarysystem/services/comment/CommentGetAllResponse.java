@@ -13,9 +13,9 @@ import javax.xml.bind.annotation.*;
 
 /**
  * <p>Java class for getAllResponse complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="getAllResponse"&gt;
  *   &lt;complexContent&gt;
@@ -27,41 +27,35 @@ import javax.xml.bind.annotation.*;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "getAllResponse")
 @XmlType(name = "getAllResponse", propOrder = {
-    "komentars"
+  "komentars"
 })
 public class CommentGetAllResponse {
 
-    @XmlElement(required = true)
-    protected ArrayOfKomentars komentars;
+  @XmlElement(required = true)
+  protected ArrayOfKomentars komentars;
 
-    /**
-     * Gets the value of the komentars property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ArrayOfKomentars }
-     *     
-     */
-    public ArrayOfKomentars getKomentars() {
-        return komentars;
-    }
+  /**
+   * Gets the value of the komentars property.
+   *
+   * @return possible object is
+   * {@link ArrayOfKomentars }
+   */
+  public ArrayOfKomentars getKomentars() {
+    return komentars;
+  }
 
-    /**
-     * Sets the value of the komentars property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ArrayOfKomentars }
-     *     
-     */
-    public void setKomentars(ArrayOfKomentars value) {
-        this.komentars = value;
-    }
+  /**
+   * Sets the value of the komentars property.
+   *
+   * @param value allowed object is
+   *              {@link ArrayOfKomentars }
+   */
+  public void setKomentars(ArrayOfKomentars value) {
+    this.komentars = value;
+  }
 
 }

@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for getByNumericConditionResponse complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="getByNumericConditionResponse"&gt;
  *   &lt;complexContent&gt;
@@ -30,40 +30,34 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getByNumericConditionResponse", propOrder = {
-    "komentars"
+  "komentars"
 })
 public class CommentGetByNumericConditionResponse {
 
-    @XmlElement(required = true)
-    protected ArrayOfKomentars komentars;
+  @XmlElement(required = true)
+  protected ArrayOfKomentars komentars;
 
-    /**
-     * Gets the value of the komentars property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ArrayOfKomentars }
-     *     
-     */
-    public ArrayOfKomentars getKomentars() {
-        return komentars;
-    }
+  /**
+   * Gets the value of the komentars property.
+   *
+   * @return possible object is
+   * {@link ArrayOfKomentars }
+   */
+  public ArrayOfKomentars getKomentars() {
+    return komentars;
+  }
 
-    /**
-     * Sets the value of the komentars property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ArrayOfKomentars }
-     *     
-     */
-    public void setKomentars(ArrayOfKomentars value) {
-        this.komentars = value;
-    }
+  /**
+   * Sets the value of the komentars property.
+   *
+   * @param value allowed object is
+   *              {@link ArrayOfKomentars }
+   */
+  public void setKomentars(ArrayOfKomentars value) {
+    this.komentars = value;
+  }
 
 }

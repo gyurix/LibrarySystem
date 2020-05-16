@@ -44,7 +44,7 @@
         <tbody>
         <tr th:each="book : ${bookList}">
             <td><span th:text="${book.id} + '.'"></span></td>
-            <td><img th:src="${book.pictureLink}" height="150px"></td>
+            <td><img height="150px" th:src="${book.pictureLink}"></td>
             <td><a th:href="${book.commentLink}" th:text="${book.title}"></a></td>
             <td><span th:text="${book.author}"></span></td>
             <td><span th:text="${book.year}"></span></td>

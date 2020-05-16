@@ -8,9 +8,6 @@
 
 package gyurix.librarysystem.services.comment;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.xml.bind.annotation.*;
 import javax.xml.datatype.XMLGregorianCalendar;
 
@@ -59,23 +56,25 @@ import javax.xml.datatype.XMLGregorianCalendar;
 public class CommentOne {
 
   protected boolean accepted;
-  @XmlElement(required = true)
+  @XmlElement
   @XmlSchemaType(name = "dateTime")
   protected XMLGregorianCalendar acceptedDate;
   @XmlElement(required = true)
   @XmlSchemaType(name = "dateTime")
   protected XMLGregorianCalendar addedDate;
+  @XmlElement(required = true)
   protected int bookId;
   protected int id;
-  @XmlElement(required = true)
+  @XmlElement
   protected String name;
   protected int rating;
-  @XmlElement(required = true)
+  @XmlElement
   protected String reviewerNote;
   protected boolean spoiler;
   @XmlElement(required = true)
   protected String text;
   protected int userID;
+
   /**
    * Gets the value of the acceptedDate property.
    *
