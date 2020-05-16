@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>Informačný systém knižnice</title>
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet" th:href="@{css/style.css}" type="text/css" />
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+    <nav class="menu">
+        <ul class="menu">
+            <li><a href="/">Domov</a></li>
+            <li><a href="/bookList">Knižnica</a></li>
+            <li><a href="#">Komentáre</a></li>
+            <li><a href="#">Moje výpožičky</a></li>
+            <li><a href="/about">O nás</a></li>
+            <li><a href="#">Kontakt</a></li>
+            <li><a th:text="${loginButton}" th:href="@{loginPath}">Prihlásiť sa</a></li>
+        </ul>
+    </nav>
+</header>
+
+<article class="komentare-article">
+    <h1>Nepotvrdené komentáre</h1>
+
+    <head>
+
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            th, td {
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even){background-color: #99e6ff}
+
+            th {
+                background-color: #4CAF50;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+
+    <div class="table-users">
+        <table cellspacing="0">
+            <tr>
+                <th> </th>
+                <th>Autor</th>
+                <th>Kniha</th>
+                <th>Text</th>
+                <th>Spoiler</th>
+                <th></th>
+                <th></th>
+            </tr>
+
+            <tbody>
+            <tr th:each="comment : ${commentList}">
+                <td></td>
+                <td><span th:text="${comment.author}"></span></td>
+                <td><span th:text="${comment.bookName}"></span></td>
+                <td><span th:text="${comment.text}"></span></td>
+                <td><span th:text="${comment.spoiler}"></span></td>
+                <td><button class="w3-button w3-red w3-round-large confirm_comment-button" type="submit">Potvrdit</button></td>
+                <td><button class="w3-button w3-red w3-round-large detail_comment-button" type="submit">Detail</button></td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+
+
+
+</article>
+<footer>COPYRIGHT</footer>
+
+</body>
+
+</html>

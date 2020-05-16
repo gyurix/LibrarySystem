@@ -42,7 +42,7 @@
         </thead>
         <tbody>
         <tr th:each="book : ${bookList}">
-            <td><img th:src="${book.pictureLink}"></td>
+            <td><img th:src="${book.pictureLink} " width="100" height="200"></td>
             <td><a th:href="${book.commentLink}" th:text="${book.title}"></a></td>
             <td><span th:text="${book.author}"></span></td>
             <td><span th:text="${book.year}"></span></td>
