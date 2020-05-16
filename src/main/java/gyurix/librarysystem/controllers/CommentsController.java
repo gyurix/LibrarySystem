@@ -72,10 +72,15 @@ public class CommentsController {
       return LOGIN_HTML;
     }
     Users loggedUser = (Users) session.getAttribute(LoggedUser.LOGGED_USER_ATTRIB);
-    comment.setUserID(loggedUser.getId());
-    comment.setBookId(Integer.parseInt((String) session.getAttribute("bookId")));
+    comment.setAccepted(false);
+    comment.setAcceptedDate(getNow());
     comment.setAddedDate(getNow());
+    comment.setName("N/A");
+    comment.setBookId(Integer.parseInt((String) session.getAttribute("bookId")));
     comment.setRating(3);
+    comment.setReviewerNote("N/A");
+    comment.setSpoiler(false);
+    comment.setUserID(loggedUser.getId());
     SOAPConnector.instance.insertComment(comment);
     return getComments(model, session, (String) session.getAttribute("bookId"));
   }
