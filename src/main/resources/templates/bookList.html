@@ -39,7 +39,7 @@
         </thead>
         <tbody>
         <tr th:each="book : ${bookList}">
-            <td><span th:text="${book.title}"></span></td>
+            <td><a th:href="${book.commentLink}" th:text="${book.title}">Title</a></td>
             <td><span th:text="${book.author}"> Autor </span></td>
             <td><span th:text="${book.year}"> Rok vydania </span></td>
         </tr>
