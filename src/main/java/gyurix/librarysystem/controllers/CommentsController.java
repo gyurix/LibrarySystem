@@ -26,6 +26,7 @@ public class CommentsController {
     Users loggedUser = (Users) session.getAttribute(LoggedUser.LOGGED_USER_ATTRIB);
     int userId = loggedUser.getId();
     SOAPConnector.instance.getCommentsByUser(userId);
+
     return HTML;
   }
 }
