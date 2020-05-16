@@ -26,7 +26,7 @@
 </header>
 
 <article>
-    <h3>Dostupné knihy</h3>
+    <h1>Dostupné knihy</h1>
 
 
     <table class="w3-table-all w3-card-4 bookTable">
@@ -42,7 +42,7 @@
         </thead>
         <tbody>
         <tr th:each="book : ${bookList}">
-            <td><img th:src="${book.pictureLink} " width="100" height="200"></td>
+            <td><img th:src="${book.pictureLink}" height="150px"></td>
             <td><a th:href="${book.commentLink}" th:text="${book.title}"></a></td>
             <td><span th:text="${book.author}"></span></td>
             <td><span th:text="${book.year}"></span></td>
