@@ -101,33 +101,33 @@ public class ObjectFactory {
   }
 
   /**
-   * Create an instance of {@link GetAll }
+   * Create an instance of {@link UserGetAll }
    */
-  public GetAll createGetAll() {
-    return new GetAll();
+  public UserGetAll createGetAll() {
+    return new UserGetAll();
   }
 
   /**
-   * Create an instance of {@link JAXBElement }{@code <}{@link GetAll }{@code >}}
+   * Create an instance of {@link JAXBElement }{@code <}{@link UserGetAll }{@code >}}
    */
   @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115user/types", name = "getAll")
-  public JAXBElement<GetAll> createGetAll(GetAll value) {
-    return new JAXBElement<GetAll>(_GetAll_QNAME, GetAll.class, null, value);
+  public JAXBElement<UserGetAll> createGetAll(UserGetAll value) {
+    return new JAXBElement<UserGetAll>(_GetAll_QNAME, UserGetAll.class, null, value);
   }
 
   /**
-   * Create an instance of {@link GetAllResponse }
+   * Create an instance of {@link UserGetAllResponse }
    */
-  public GetAllResponse createGetAllResponse() {
-    return new GetAllResponse();
+  public UserGetAllResponse createGetAllResponse() {
+    return new UserGetAllResponse();
   }
 
   /**
-   * Create an instance of {@link JAXBElement }{@code <}{@link GetAllResponse }{@code >}}
+   * Create an instance of {@link JAXBElement }{@code <}{@link UserGetAllResponse }{@code >}}
    */
   @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115user/types", name = "getAllResponse")
-  public JAXBElement<GetAllResponse> createGetAllResponse(GetAllResponse value) {
-    return new JAXBElement<GetAllResponse>(_GetAllResponse_QNAME, GetAllResponse.class, null, value);
+  public JAXBElement<UserGetAllResponse> createGetAllResponse(UserGetAllResponse value) {
+    return new JAXBElement<UserGetAllResponse>(_GetAllResponse_QNAME, UserGetAllResponse.class, null, value);
   }
 
   /**

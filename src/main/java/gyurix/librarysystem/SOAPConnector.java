@@ -1,21 +1,24 @@
 package gyurix.librarysystem;
 
 import gyurix.librarysystem.models.Comment;
+import gyurix.librarysystem.services.book.BookGetAll;
+import gyurix.librarysystem.services.book.BookGetAllResponse;
+import gyurix.librarysystem.services.book.Books;
 import gyurix.librarysystem.services.comment.*;
 import gyurix.librarysystem.services.email.Notify;
 import gyurix.librarysystem.services.email.NotifyResponse;
 import gyurix.librarysystem.services.user.ArrayOfIds;
-import gyurix.librarysystem.services.user.Update;
-import gyurix.librarysystem.services.user.UpdateResponse;
 import gyurix.librarysystem.services.user.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 
 import javax.xml.bind.JAXBElement;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-@SuppressWarnings("unchecked")
+@SuppressWarnings({"unchecked", "DuplicatedCode"})
 public class SOAPConnector extends WebServiceGatewaySupport {
   public static final String DB_WSDL_URL = "http://pis.predmety.fiit.stuba.sk/pis/ws/Students/Team115User";
   public static final String EMAIL_WSDL_URL = "http://pis.predmety.fiit.stuba.sk/pis/ws/NotificationServices/Email";
@@ -27,6 +30,10 @@ public class SOAPConnector extends WebServiceGatewaySupport {
   public SOAPConnector() {
     super();
     instance = this;
+  }
+
+  public <T> T bookRequest(Object request, Class<T> responseClass) {
+    return ((JAXBElement<T>) getWebServiceTemplate().marshalSendAndReceive("http://pis.predmety.fiit.stuba.sk/pis/ws/Students/Team115Book", request)).getValue();
   }
 
   public Object callWebService(String url, Object request) {
@@ -45,23 +52,51 @@ public class SOAPConnector extends WebServiceGatewaySupport {
     commentRequest(request, CommentDeleteResponse.class);
   }
 
-  public GetAllResponse getAll() {
+  public UserGetAllResponse getAllUsers() {
     log.info("getAll");
-    return ((JAXBElement<GetAllResponse>) getWebServiceTemplate().marshalSendAndReceive("http://pis.predmety.fiit.stuba.sk/pis/ws/Students/Team115User", new GetAll())).getValue();
+    return ((JAXBElement<UserGetAllResponse>) getWebServiceTemplate().marshalSendAndReceive("http://pis.predmety.fiit.stuba.sk/pis/ws/Students/Team115User", new UserGetAll())).getValue();
   }
 
-  public List<CommentListElement> getCommentsByBook(int bookId) {
-    CommentGetByAttributeValue request = new CommentGetByAttributeValue();
-    request.setAttributeName("bookId");
-    request.setAttributeValue(String.valueOf(bookId));
-    return commentRequest(request, CommentGetByAttributeValueResponse.class).getKomentars().getKomentar();
+  public List<Comment> getCommentsByBook(int bookId) {
+    CommentGetAllResponse comments = commentRequest(new CommentGetAll(), CommentGetAllResponse.class);
+    List<Users> users = userRequest(new UserGetAll(), UserGetAllResponse.class).getUsers().getUser();
+    List<Books> books = bookRequest(new BookGetAll(), BookGetAllResponse.class).getBooks().getBook();
+    HashMap<Integer, Books> bookCache = new HashMap<>();
+    HashMap<Integer, Users> userCache = new HashMap<>();
+    books.forEach(b -> bookCache.put(b.getId(), b));
+    users.forEach(u -> userCache.put(u.getId(), u));
+    List<Comment> out = new ArrayList<>();
+    comments.getKomentars().getComments().forEach((e) -> {
+      if (e.getBookId() == bookId) {
+        Books book = bookCache.get(e.getBookId());
+        Users user = userCache.get(e.getUserID());
+        e.setBookName(book.getName());
+        e.setUserName(user.getName());
+        out.add(e);
+      }
+    });
+    return out;
   }
 
-  public List<CommentListElement> getCommentsByUser(int userId) {
-    CommentGetByAttributeValue request = new CommentGetByAttributeValue();
-    request.setAttributeName("userID");
-    request.setAttributeValue(String.valueOf(userId));
-    return commentRequest(request, CommentGetByAttributeValueResponse.class).getKomentars().getKomentar();
+  public List<Comment> getCommentsByUser(int userId) {
+    CommentGetAllResponse comments = commentRequest(new CommentGetAll(), CommentGetAllResponse.class);
+    List<Users> users = userRequest(new UserGetAll(), UserGetAllResponse.class).getUsers().getUser();
+    List<Books> books = bookRequest(new BookGetAll(), BookGetAllResponse.class).getBooks().getBook();
+    HashMap<Integer, Books> bookCache = new HashMap<>();
+    HashMap<Integer, Users> userCache = new HashMap<>();
+    books.forEach(b -> bookCache.put(b.getId(), b));
+    users.forEach(u -> userCache.put(u.getId(), u));
+    List<Comment> out = new ArrayList<>();
+    comments.getKomentars().getComments().forEach((e) -> {
+      if (e.getUserID() == userId) {
+        Books book = bookCache.get(e.getBookId());
+        Users user = userCache.get(e.getUserID());
+        e.setBookName(book.getName());
+        e.setUserName(user.getName());
+        out.add(e);
+      }
+    });
+    return out;
   }
 
   public GetByAttributeValueResponse getUser(String email) {
@@ -76,7 +111,6 @@ public class SOAPConnector extends WebServiceGatewaySupport {
   public GetByIdResponse getUserById(int id) {
     GetById getById = new GetById();
     getById.setId(id);
-
     return ((JAXBElement<GetByIdResponse>) getWebServiceTemplate().marshalSendAndReceive(DB_WSDL_URL, getById)).getValue();
   }
 
@@ -129,6 +163,10 @@ public class SOAPConnector extends WebServiceGatewaySupport {
 
     return ((JAXBElement<NotifyResponse>) getWebServiceTemplate().marshalSendAndReceive("http://pis.predmety.fiit.stuba.sk/pis/ws/NotificationServices/Email", notify)).getValue();
 
+  }
+
+  public <T> T userRequest(Object request, Class<T> responseClass) {
+    return ((JAXBElement<T>) getWebServiceTemplate().marshalSendAndReceive("http://pis.predmety.fiit.stuba.sk/pis/ws/Students/Team115User", request)).getValue();
   }
 
 }

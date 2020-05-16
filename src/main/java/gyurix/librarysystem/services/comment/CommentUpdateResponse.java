@@ -10,21 +10,20 @@ package gyurix.librarysystem.services.comment;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for getByAttributeValueResponse complex type.
+ * <p>Java class for updateResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="getByAttributeValueResponse"&gt;
+ * &lt;complexType name="updateResponse"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="komentars" type="{http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types}ArrayOfKomentars"/&gt;
+ *         &lt;element name="updates" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -34,36 +33,27 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getByAttributeValueResponse", propOrder = {
-    "komentars"
+@XmlType(name = "updateResponse", propOrder = {
+    "updates"
 })
-public class CommentGetByAttributeValueResponse {
+public class CommentUpdateResponse {
 
-    @XmlElement(required = true)
-    protected ArrayOfKomentars komentars;
+    protected int updates;
 
     /**
-     * Gets the value of the komentars property.
+     * Gets the value of the updates property.
      * 
-     * @return
-     *     possible object is
-     *     {@link ArrayOfKomentars }
-     *     
      */
-    public ArrayOfKomentars getKomentars() {
-        return komentars;
+    public int getUpdates() {
+        return updates;
     }
 
     /**
-     * Sets the value of the komentars property.
+     * Sets the value of the updates property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link ArrayOfKomentars }
-     *     
      */
-    public void setKomentars(ArrayOfKomentars value) {
-        this.komentars = value;
+    public void setUpdates(int value) {
+        this.updates = value;
     }
 
 }

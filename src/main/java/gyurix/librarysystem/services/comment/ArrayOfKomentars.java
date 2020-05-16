@@ -8,6 +8,8 @@
 
 package gyurix.librarysystem.services.comment;
 
+import gyurix.librarysystem.models.Comment;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -42,7 +44,7 @@ import javax.xml.bind.annotation.XmlType;
 public class ArrayOfKomentars {
 
     @XmlElement(nillable = true)
-    protected List<CommentListElement> komentar;
+    protected List<Comment> komentar;
 
     /**
      * Gets the value of the komentar property.
@@ -62,13 +64,13 @@ public class ArrayOfKomentars {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link CommentListElement }
+     * {@link Comment }
      * 
      * 
      */
-    public List<CommentListElement> getKomentar() {
+    public List<Comment> getComments() {
         if (komentar == null) {
-            komentar = new ArrayList<CommentListElement>();
+            komentar = new ArrayList<>();
         }
         return this.komentar;
     }

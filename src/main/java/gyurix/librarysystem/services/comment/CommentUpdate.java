@@ -10,10 +10,7 @@ package gyurix.librarysystem.services.comment;
 
 import gyurix.librarysystem.models.Comment;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
@@ -39,13 +36,14 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "update")
 @XmlType(name = "update", propOrder = {
     "teamId",
     "teamPassword",
     "entityId",
     "komentar"
 })
-public class Update {
+public class CommentUpdate {
 
     @XmlElement(name = "team_id", required = true)
     protected String teamId;

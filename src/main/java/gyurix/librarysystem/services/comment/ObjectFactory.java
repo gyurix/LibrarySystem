@@ -57,13 +57,6 @@ public class ObjectFactory {
     public ObjectFactory() {
     }
 
-    /**
-     * Create an instance of {@link CommentGetById }
-     * 
-     */
-    public CommentGetById createGetById() {
-        return new CommentGetById();
-    }
 
     /**
      * Create an instance of {@link Comment }
@@ -73,55 +66,7 @@ public class ObjectFactory {
         return new Comment();
     }
 
-    /**
-     * Create an instance of {@link CommentGetByIdResponse }
-     * 
-     */
-    public CommentGetByIdResponse createGetByIdResponse() {
-        return new CommentGetByIdResponse();
-    }
-
-    /**
-     * Create an instance of {@link CommentGetByAttributeValue }
-     * 
-     */
-    public CommentGetByAttributeValue createGetByAttributeValue() {
-        return new CommentGetByAttributeValue();
-    }
-
-    /**
-     * Create an instance of {@link CommentListElement }
-     * 
-     */
-    public CommentListElement createKomentars() {
-        return new CommentListElement();
-    }
-
-    /**
-     * Create an instance of {@link CommentGetByAttributeValueResponse }
-     * 
-     */
-    public CommentGetByAttributeValueResponse createGetByAttributeValueResponse() {
-        return new CommentGetByAttributeValueResponse();
-    }
-
-    /**
-     * Create an instance of {@link CommentGetByNumericCondition }
-     * 
-     */
-    public CommentGetByNumericCondition createGetByNumericCondition() {
-        return new CommentGetByNumericCondition();
-    }
-
-    /**
-     * Create an instance of {@link CommentGetByNumericConditionResponse }
-     * 
-     */
-    public CommentGetByNumericConditionResponse createGetByNumericConditionResponse() {
-        return new CommentGetByNumericConditionResponse();
-    }
-
-    /**
+     /**
      * Create an instance of {@link CommentGetAll }
      * 
      */
@@ -154,19 +99,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Update }
+     * Create an instance of {@link CommentUpdate }
      * 
      */
-    public Update createUpdate() {
-        return new Update();
+    public CommentUpdate createUpdate() {
+        return new CommentUpdate();
     }
 
     /**
-     * Create an instance of {@link UpdateResponse }
+     * Create an instance of {@link CommentUpdateResponse }
      * 
      */
-    public UpdateResponse createUpdateResponse() {
-        return new UpdateResponse();
+    public CommentUpdateResponse createUpdateResponse() {
+        return new CommentUpdateResponse();
     }
 
     /**
@@ -202,76 +147,25 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CommentGetById }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types", name = "getById")
-    public JAXBElement<CommentGetById> createGetById(CommentGetById value) {
-        return new JAXBElement<CommentGetById>(_GetById_QNAME, CommentGetById.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Comment }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types", name = "Komentar")
     public JAXBElement<Comment> createKomentar(Comment value) {
-        return new JAXBElement<Comment>(_Komentar_QNAME, Comment.class, null, value);
+        return new JAXBElement<>(_Komentar_QNAME, Comment.class, null, value);
     }
 
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CommentGetByIdResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types", name = "getByIdResponse")
-    public JAXBElement<CommentGetByIdResponse> createGetByIdResponse(CommentGetByIdResponse value) {
-        return new JAXBElement<CommentGetByIdResponse>(_GetByIdResponse_QNAME, CommentGetByIdResponse.class, null, value);
-    }
+
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CommentGetByAttributeValue }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types", name = "getByAttributeValue")
-    public JAXBElement<CommentGetByAttributeValue> createGetByAttributeValue(CommentGetByAttributeValue value) {
-        return new JAXBElement<CommentGetByAttributeValue>(_GetByAttributeValue_QNAME, CommentGetByAttributeValue.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CommentListElement }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Comment }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types", name = "Komentars")
-    public JAXBElement<CommentListElement> createKomentars(CommentListElement value) {
-        return new JAXBElement<CommentListElement>(_Komentars_QNAME, CommentListElement.class, null, value);
+    public JAXBElement<Comment> createKomentars(Comment value) {
+        return new JAXBElement<>(_Komentars_QNAME, Comment.class, null, value);
     }
 
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CommentGetByAttributeValueResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types", name = "getByAttributeValueResponse")
-    public JAXBElement<CommentGetByAttributeValueResponse> createGetByAttributeValueResponse(CommentGetByAttributeValueResponse value) {
-        return new JAXBElement<CommentGetByAttributeValueResponse>(_GetByAttributeValueResponse_QNAME, CommentGetByAttributeValueResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CommentGetByNumericCondition }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types", name = "getByNumericCondition")
-    public JAXBElement<CommentGetByNumericCondition> createGetByNumericCondition(CommentGetByNumericCondition value) {
-        return new JAXBElement<CommentGetByNumericCondition>(_GetByNumericCondition_QNAME, CommentGetByNumericCondition.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CommentGetByNumericConditionResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types", name = "getByNumericConditionResponse")
-    public JAXBElement<CommentGetByNumericConditionResponse> createGetByNumericConditionResponse(CommentGetByNumericConditionResponse value) {
-        return new JAXBElement<CommentGetByNumericConditionResponse>(_GetByNumericConditionResponse_QNAME, CommentGetByNumericConditionResponse.class, null, value);
-    }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CommentGetAll }{@code >}}
@@ -279,7 +173,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types", name = "getAll")
     public JAXBElement<CommentGetAll> createGetAll(CommentGetAll value) {
-        return new JAXBElement<CommentGetAll>(_GetAll_QNAME, CommentGetAll.class, null, value);
+        return new JAXBElement<>(_GetAll_QNAME, CommentGetAll.class, null, value);
     }
 
     /**
@@ -288,7 +182,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types", name = "getAllResponse")
     public JAXBElement<CommentGetAllResponse> createGetAllResponse(CommentGetAllResponse value) {
-        return new JAXBElement<CommentGetAllResponse>(_GetAllResponse_QNAME, CommentGetAllResponse.class, null, value);
+        return new JAXBElement<>(_GetAllResponse_QNAME, CommentGetAllResponse.class, null, value);
     }
 
     /**
@@ -297,7 +191,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types", name = "insert")
     public JAXBElement<CommentInsert> createInsert(CommentInsert value) {
-        return new JAXBElement<CommentInsert>(_Insert_QNAME, CommentInsert.class, null, value);
+        return new JAXBElement<>(_Insert_QNAME, CommentInsert.class, null, value);
     }
 
     /**
@@ -306,25 +200,25 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types", name = "insertResponse")
     public JAXBElement<CommentInsertResponse> createInsertResponse(CommentInsertResponse value) {
-        return new JAXBElement<CommentInsertResponse>(_InsertResponse_QNAME, CommentInsertResponse.class, null, value);
+        return new JAXBElement<>(_InsertResponse_QNAME, CommentInsertResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Update }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link CommentUpdate }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types", name = "update")
-    public JAXBElement<Update> createUpdate(Update value) {
-        return new JAXBElement<Update>(_Update_QNAME, Update.class, null, value);
+    public JAXBElement<CommentUpdate> createUpdate(CommentUpdate value) {
+        return new JAXBElement<>(_Update_QNAME, CommentUpdate.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link CommentUpdateResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types", name = "updateResponse")
-    public JAXBElement<UpdateResponse> createUpdateResponse(UpdateResponse value) {
-        return new JAXBElement<UpdateResponse>(_UpdateResponse_QNAME, UpdateResponse.class, null, value);
+    public JAXBElement<CommentUpdateResponse> createUpdateResponse(CommentUpdateResponse value) {
+        return new JAXBElement<>(_UpdateResponse_QNAME, CommentUpdateResponse.class, null, value);
     }
 
     /**
@@ -333,7 +227,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types", name = "delete")
     public JAXBElement<CommentDelete> createDelete(CommentDelete value) {
-        return new JAXBElement<CommentDelete>(_Delete_QNAME, CommentDelete.class, null, value);
+        return new JAXBElement<>(_Delete_QNAME, CommentDelete.class, null, value);
     }
 
     /**
@@ -342,7 +236,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types", name = "deleteResponse")
     public JAXBElement<CommentDeleteResponse> createDeleteResponse(CommentDeleteResponse value) {
-        return new JAXBElement<CommentDeleteResponse>(_DeleteResponse_QNAME, CommentDeleteResponse.class, null, value);
+        return new JAXBElement<>(_DeleteResponse_QNAME, CommentDeleteResponse.class, null, value);
     }
 
 }

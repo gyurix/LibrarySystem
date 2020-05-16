@@ -10,10 +10,7 @@ package gyurix.librarysystem.services.comment;
 
 import gyurix.librarysystem.models.Comment;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
@@ -38,6 +35,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "insert")
 @XmlType(name = "insert", propOrder = {
     "teamId",
     "teamPassword",

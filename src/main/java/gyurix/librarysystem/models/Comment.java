@@ -8,19 +8,19 @@
 
 package gyurix.librarysystem.models;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.xml.bind.annotation.*;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
  * <p>Java class for Komentar complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="Komentar"&gt;
  *   &lt;complexContent&gt;
@@ -42,258 +42,231 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Komentar", propOrder = {
-    "id",
-    "name",
-    "accepted",
-    "acceptedDate",
-    "addedDate",
-    "bookId",
-    "rating",
-    "reviewerNote",
-    "spoiler",
-    "text",
-    "userID"
+  "id",
+  "name",
+  "accepted",
+  "acceptedDate",
+  "addedDate",
+  "bookId",
+  "rating",
+  "reviewerNote",
+  "spoiler",
+  "text",
+  "userID"
 })
+@NoArgsConstructor
 public class Comment {
 
-    protected int id;
-    @XmlElement(required = true)
-    protected String name;
-    protected boolean accepted;
-    @XmlElement(required = true)
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar acceptedDate;
-    @XmlElement(required = true)
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar addedDate;
-    protected int bookId;
-    protected int rating;
-    @XmlElement(required = true)
-    protected String reviewerNote;
-    protected boolean spoiler;
-    @XmlElement(required = true)
-    protected String text;
-    protected int userID;
+  protected boolean accepted;
+  @XmlElement(required = true)
+  @XmlSchemaType(name = "dateTime")
+  protected XMLGregorianCalendar acceptedDate;
+  @XmlElement(required = true)
+  @XmlSchemaType(name = "dateTime")
+  protected XMLGregorianCalendar addedDate;
+  protected int bookId;
+  @Getter
+  @Setter
+  protected transient String bookName;
+  @Getter
+  @Setter
+  protected transient String userName;
+  protected int id;
+  @XmlElement(required = true)
+  protected String name;
+  protected int rating;
+  @XmlElement(required = true)
+  protected String reviewerNote;
+  protected boolean spoiler;
+  @XmlElement(required = true)
+  protected String text;
+  protected int userID;
 
-    /**
-     * Gets the value of the id property.
-     * 
-     */
-    public int getId() {
-        return id;
-    }
+  /**
+   * Gets the value of the acceptedDate property.
+   *
+   * @return possible object is
+   * {@link XMLGregorianCalendar }
+   */
+  public XMLGregorianCalendar getAcceptedDate() {
+    return acceptedDate;
+  }
 
-    /**
-     * Sets the value of the id property.
-     * 
-     */
-    public void setId(int value) {
-        this.id = value;
-    }
+  /**
+   * Sets the value of the acceptedDate property.
+   *
+   * @param value allowed object is
+   *              {@link XMLGregorianCalendar }
+   */
+  public void setAcceptedDate(XMLGregorianCalendar value) {
+    this.acceptedDate = value;
+  }
 
-    /**
-     * Gets the value of the name property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getName() {
-        return name;
-    }
+  /**
+   * Gets the value of the addedDate property.
+   *
+   * @return possible object is
+   * {@link XMLGregorianCalendar }
+   */
+  public XMLGregorianCalendar getAddedDate() {
+    return addedDate;
+  }
 
-    /**
-     * Sets the value of the name property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
+  /**
+   * Sets the value of the addedDate property.
+   *
+   * @param value allowed object is
+   *              {@link XMLGregorianCalendar }
+   */
+  public void setAddedDate(XMLGregorianCalendar value) {
+    this.addedDate = value;
+  }
 
-    /**
-     * Gets the value of the accepted property.
-     * 
-     */
-    public boolean isAccepted() {
-        return accepted;
-    }
+  /**
+   * Gets the value of the bookId property.
+   */
+  public int getBookId() {
+    return bookId;
+  }
 
-    /**
-     * Sets the value of the accepted property.
-     * 
-     */
-    public void setAccepted(boolean value) {
-        this.accepted = value;
-    }
+  /**
+   * Sets the value of the bookId property.
+   */
+  public void setBookId(int value) {
+    this.bookId = value;
+  }
 
-    /**
-     * Gets the value of the acceptedDate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getAcceptedDate() {
-        return acceptedDate;
-    }
+  /**
+   * Gets the value of the id property.
+   */
+  public int getId() {
+    return id;
+  }
 
-    /**
-     * Sets the value of the acceptedDate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setAcceptedDate(XMLGregorianCalendar value) {
-        this.acceptedDate = value;
-    }
+  /**
+   * Sets the value of the id property.
+   */
+  public void setId(int value) {
+    this.id = value;
+  }
 
-    /**
-     * Gets the value of the addedDate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getAddedDate() {
-        return addedDate;
-    }
+  /**
+   * Gets the value of the name property.
+   *
+   * @return possible object is
+   * {@link String }
+   */
+  public String getName() {
+    return name;
+  }
 
-    /**
-     * Sets the value of the addedDate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setAddedDate(XMLGregorianCalendar value) {
-        this.addedDate = value;
-    }
+  /**
+   * Sets the value of the name property.
+   *
+   * @param value allowed object is
+   *              {@link String }
+   */
+  public void setName(String value) {
+    this.name = value;
+  }
 
-    /**
-     * Gets the value of the bookId property.
-     * 
-     */
-    public int getBookId() {
-        return bookId;
-    }
+  /**
+   * Gets the value of the rating property.
+   */
+  public int getRating() {
+    return rating;
+  }
 
-    /**
-     * Sets the value of the bookId property.
-     * 
-     */
-    public void setBookId(int value) {
-        this.bookId = value;
-    }
+  /**
+   * Sets the value of the rating property.
+   */
+  public void setRating(int value) {
+    this.rating = value;
+  }
 
-    /**
-     * Gets the value of the rating property.
-     * 
-     */
-    public int getRating() {
-        return rating;
-    }
+  /**
+   * Gets the value of the reviewerNote property.
+   *
+   * @return possible object is
+   * {@link String }
+   */
+  public String getReviewerNote() {
+    return reviewerNote;
+  }
 
-    /**
-     * Sets the value of the rating property.
-     * 
-     */
-    public void setRating(int value) {
-        this.rating = value;
-    }
+  /**
+   * Sets the value of the reviewerNote property.
+   *
+   * @param value allowed object is
+   *              {@link String }
+   */
+  public void setReviewerNote(String value) {
+    this.reviewerNote = value;
+  }
 
-    /**
-     * Gets the value of the reviewerNote property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getReviewerNote() {
-        return reviewerNote;
-    }
+  /**
+   * Gets the value of the text property.
+   *
+   * @return possible object is
+   * {@link String }
+   */
+  public String getText() {
+    return text;
+  }
 
-    /**
-     * Sets the value of the reviewerNote property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setReviewerNote(String value) {
-        this.reviewerNote = value;
-    }
+  /**
+   * Sets the value of the text property.
+   *
+   * @param value allowed object is
+   *              {@link String }
+   */
+  public void setText(String value) {
+    this.text = value;
+  }
 
-    /**
-     * Gets the value of the spoiler property.
-     * 
-     */
-    public boolean isSpoiler() {
-        return spoiler;
-    }
+  /**
+   * Gets the value of the userID property.
+   */
+  public int getUserID() {
+    return userID;
+  }
 
-    /**
-     * Sets the value of the spoiler property.
-     * 
-     */
-    public void setSpoiler(boolean value) {
-        this.spoiler = value;
-    }
+  /**
+   * Sets the value of the userID property.
+   */
+  public void setUserID(int value) {
+    this.userID = value;
+  }
 
-    /**
-     * Gets the value of the text property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getText() {
-        return text;
-    }
+  /**
+   * Gets the value of the accepted property.
+   */
+  public boolean isAccepted() {
+    return accepted;
+  }
 
-    /**
-     * Sets the value of the text property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setText(String value) {
-        this.text = value;
-    }
+  /**
+   * Sets the value of the accepted property.
+   */
+  public void setAccepted(boolean value) {
+    this.accepted = value;
+  }
 
-    /**
-     * Gets the value of the userID property.
-     * 
-     */
-    public int getUserID() {
-        return userID;
-    }
+  /**
+   * Gets the value of the spoiler property.
+   */
+  public boolean isSpoiler() {
+    return spoiler;
+  }
 
-    /**
-     * Sets the value of the userID property.
-     * 
-     */
-    public void setUserID(int value) {
-        this.userID = value;
-    }
+  /**
+   * Sets the value of the spoiler property.
+   */
+  public void setSpoiler(boolean value) {
+    this.spoiler = value;
+  }
 
 }

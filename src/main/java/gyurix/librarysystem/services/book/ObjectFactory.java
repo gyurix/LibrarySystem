@@ -128,33 +128,33 @@ public class ObjectFactory {
   }
 
   /**
-   * Create an instance of {@link GetAll }
+   * Create an instance of {@link BookGetAll }
    */
-  public GetAll createGetAll() {
-    return new GetAll();
+  public BookGetAll createGetAll() {
+    return new BookGetAll();
   }
 
   /**
-   * Create an instance of {@link JAXBElement }{@code <}{@link GetAll }{@code >}}
+   * Create an instance of {@link JAXBElement }{@code <}{@link BookGetAll }{@code >}}
    */
   @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115book/types", name = "getAll")
-  public JAXBElement<GetAll> createGetAll(GetAll value) {
-    return new JAXBElement<GetAll>(_GetAll_QNAME, GetAll.class, null, value);
+  public JAXBElement<BookGetAll> createGetAll(BookGetAll value) {
+    return new JAXBElement<BookGetAll>(_GetAll_QNAME, BookGetAll.class, null, value);
   }
 
   /**
-   * Create an instance of {@link GetAllResponse }
+   * Create an instance of {@link BookGetAllResponse }
    */
-  public GetAllResponse createGetAllResponse() {
-    return new GetAllResponse();
+  public BookGetAllResponse createGetAllResponse() {
+    return new BookGetAllResponse();
   }
 
   /**
-   * Create an instance of {@link JAXBElement }{@code <}{@link GetAllResponse }{@code >}}
+   * Create an instance of {@link JAXBElement }{@code <}{@link BookGetAllResponse }{@code >}}
    */
   @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115book/types", name = "getAllResponse")
-  public JAXBElement<GetAllResponse> createGetAllResponse(GetAllResponse value) {
-    return new JAXBElement<GetAllResponse>(_GetAllResponse_QNAME, GetAllResponse.class, null, value);
+  public JAXBElement<BookGetAllResponse> createGetAllResponse(BookGetAllResponse value) {
+    return new JAXBElement<BookGetAllResponse>(_GetAllResponse_QNAME, BookGetAllResponse.class, null, value);
   }
 
   /**

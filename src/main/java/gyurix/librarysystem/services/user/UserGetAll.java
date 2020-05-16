@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "getAll")
 @XmlType(name = "", propOrder = {})
-public class GetAll {
+public class UserGetAll {
 
 
 }

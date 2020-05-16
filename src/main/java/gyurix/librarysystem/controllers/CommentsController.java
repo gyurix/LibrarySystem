@@ -1,6 +1,7 @@
 package gyurix.librarysystem.controllers;
 
 import gyurix.librarysystem.SOAPConnector;
+import gyurix.librarysystem.models.Comment;
 import gyurix.librarysystem.models.LoggedUser;
 import gyurix.librarysystem.services.user.Users;
 import org.springframework.stereotype.Controller;
@@ -8,6 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
+
+import static gyurix.librarysystem.controllers.LoginController.LOGIN_HTML;
 
 @Controller
 public class CommentsController {
@@ -22,11 +26,12 @@ public class CommentsController {
     } else {
       model.addAttribute("loginButton", "Prihlásiť sa");
       model.addAttribute("loginPath", "/login");
+      return LOGIN_HTML;
     }
     Users loggedUser = (Users) session.getAttribute(LoggedUser.LOGGED_USER_ATTRIB);
     int userId = loggedUser.getId();
-    SOAPConnector.instance.getCommentsByUser(userId);
-
+    List<Comment> commentList = SOAPConnector.instance.getCommentsByUser(userId);
+    model.addAttribute("commentList", commentList);
     return HTML;
   }
 }

@@ -11,7 +11,7 @@ public class TestController {
   @GetMapping("/test")
   public String getSite(Model model) {
     model.addAttribute("headerText", "HELLO");
-    System.out.println("Loaded, response = " + SOAPConnector.instance.getAll());
+    System.out.println("Loaded, response = " + SOAPConnector.instance.getAllUsers());
     return "about.html";
   }
 }
