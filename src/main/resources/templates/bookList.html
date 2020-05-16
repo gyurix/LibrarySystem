@@ -32,16 +32,22 @@
     <table class="w3-table-all w3-card-4 bookTable">
         <thead>
         <tr>
+            <th> Obálka</th>
             <th> Názov</th>
             <th> Autor</th>
             <th> Rok vydania</th>
+            <th> Vydavateľstvo</th>
+            <th> ISBN</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="book : ${bookList}">
-            <td><a th:href="${book.commentLink}" th:text="${book.title}">Title</a></td>
-            <td><span th:text="${book.author}"> Autor </span></td>
-            <td><span th:text="${book.year}"> Rok vydania </span></td>
+            <td><img th:src="${book.pictureLink}"></td>
+            <td><a th:href="${book.commentLink}" th:text="${book.title}"></a></td>
+            <td><span th:text="${book.author}"></span></td>
+            <td><span th:text="${book.year}"></span></td>
+            <td><span th:text="${book.publisher}"></span></td>
+            <td><span th:text="${book.ISBN}"></span></td>
         </tr>
         </tbody>
     </table>

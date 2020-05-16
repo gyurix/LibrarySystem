@@ -27,9 +27,9 @@ public class BookListController {
       model.addAttribute("loginPath", "/login");
     }
     List<Book> bookList = new ArrayList<>();
-    bookList.add(new Book("Kniha1", "Autor1", 2001));
-    bookList.add(new Book("Kniha2", "Autor2", 2002));
-    bookList.add(new Book("Kniha3", "Autor3", 2003));
+    bookList.add(new Book("Little Fires Everywhere: A Novel", "Celeste Ng", 2017, "Penguin Books", "B01N4VW75U", "https://m.media-amazon.com/images/I/51Aaysqku4L.jpg"));
+    bookList.add(new Book("American Dirt (Oprah's Book Club): A Novel", "Jeanine Cummings", 2020, "Flatiron Books", "B07QQLCZY1", "https://m.media-amazon.com/images/I/51hwe011M+L.jpg"));
+    bookList.add(new Book("The Dancing Girls", "M. M. Chouinard", 2019, "Bookouture", "B07NRG8PFH", "https://m.media-amazon.com/images/I/51ac1jZrhML.jpg"));
 
     model.addAttribute("bookList", bookList);
     return BOOK_LIST_HTML;
