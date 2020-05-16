@@ -53,7 +53,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
   "text",
   "userID"
 })
-public class CommentOne {
+public class Komentar {
 
   protected boolean accepted;
   @XmlElement

@@ -38,15 +38,15 @@ import javax.xml.bind.annotation.XmlType;
 public class CommentGetByIdResponse {
 
   @XmlElement(required = true)
-  protected CommentOne komentar;
+  protected Komentar komentar;
 
   /**
    * Gets the value of the komentar property.
    *
    * @return possible object is
-   * {@link CommentOne }
+   * {@link Komentar }
    */
-  public CommentOne getKomentar() {
+  public Komentar getKomentar() {
     return komentar;
   }
 
@@ -54,9 +54,9 @@ public class CommentGetByIdResponse {
    * Sets the value of the komentar property.
    *
    * @param value allowed object is
-   *              {@link CommentOne }
+   *              {@link Komentar }
    */
-  public void setKomentar(CommentOne value) {
+  public void setKomentar(Komentar value) {
     this.komentar = value;
   }
 

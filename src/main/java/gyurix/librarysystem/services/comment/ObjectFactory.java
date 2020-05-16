@@ -248,18 +248,18 @@ public class ObjectFactory {
   }
 
   /**
-   * Create an instance of {@link CommentOne }
+   * Create an instance of {@link Komentar }
    */
-  public CommentOne createKomentar() {
-    return new CommentOne();
+  public Komentar createKomentar() {
+    return new Komentar();
   }
 
   /**
-   * Create an instance of {@link JAXBElement }{@code <}{@link CommentOne }{@code >}}
+   * Create an instance of {@link JAXBElement }{@code <}{@link Komentar }{@code >}}
    */
   @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115komentar/types", name = "Komentar")
-  public JAXBElement<CommentOne> createKomentar(CommentOne value) {
-    return new JAXBElement<CommentOne>(_Komentar_QNAME, CommentOne.class, null, value);
+  public JAXBElement<Komentar> createKomentar(Komentar value) {
+    return new JAXBElement<Komentar>(_Komentar_QNAME, Komentar.class, null, value);
   }
 
   /**

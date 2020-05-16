@@ -4,7 +4,7 @@ import gyurix.librarysystem.SOAPConnector;
 import gyurix.librarysystem.models.LoggedUser;
 import gyurix.librarysystem.services.book.Book;
 import gyurix.librarysystem.services.comment.Comment;
-import gyurix.librarysystem.services.comment.CommentOne;
+import gyurix.librarysystem.services.comment.Komentar;
 import gyurix.librarysystem.services.user.Users;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Controller;
@@ -62,7 +62,7 @@ public class CommentsController {
   }
 
   @RequestMapping(value = PATH_ADD, method = RequestMethod.POST)
-  public String postComment(Model model, HttpSession session, @ModelAttribute("comment") CommentOne comment) {
+  public String postComment(Model model, HttpSession session, @ModelAttribute("comment") Komentar comment) {
     if (session.getAttribute(LoggedUser.LOGGED_USER_ATTRIB) != null) {
       model.addAttribute("loginButton", "Odhlásiť sa");
       model.addAttribute("loginPath", "/logout");

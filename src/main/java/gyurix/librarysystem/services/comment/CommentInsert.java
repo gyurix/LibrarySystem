@@ -40,7 +40,7 @@ import javax.xml.bind.annotation.*;
 public class CommentInsert {
 
   @XmlElement(name = "Komentar", required = true)
-  protected CommentOne komentar;
+  protected Komentar komentar;
   @XmlElement(name = "team_id", required = true)
   protected String teamId;
   @XmlElement(name = "team_password", required = true)
@@ -50,9 +50,9 @@ public class CommentInsert {
    * Gets the value of the komentar property.
    *
    * @return possible object is
-   * {@link CommentOne }
+   * {@link Komentar }
    */
-  public CommentOne getKomentar() {
+  public Komentar getKomentar() {
     return komentar;
   }
 
@@ -60,9 +60,9 @@ public class CommentInsert {
    * Sets the value of the komentar property.
    *
    * @param value allowed object is
-   *              {@link CommentOne }
+   *              {@link Komentar }
    */
-  public void setKomentar(CommentOne value) {
+  public void setKomentar(Komentar value) {
     this.komentar = value;
   }
 

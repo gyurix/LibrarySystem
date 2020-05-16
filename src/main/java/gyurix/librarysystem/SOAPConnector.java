@@ -123,7 +123,7 @@ public class SOAPConnector extends WebServiceGatewaySupport {
     return ((JAXBElement<GetByIdResponse>) getWebServiceTemplate().marshalSendAndReceive(DB_WSDL_URL, getById)).getValue();
   }
 
-  public void insertComment(CommentOne comment) {
+  public void insertComment(Komentar comment) {
     CommentInsert request = new CommentInsert();
     request.setKomentar(comment);
     request.setTeamId(TEAM_ID);
