@@ -11,7 +11,7 @@ public class Book {
   protected String ISBN;
   protected String pictureLink;
   protected int year;
-  protected String id;
+  protected int id;
 
   public Book(String title, String author, int year, String publisher, String ISBN, String pictureLink) {
     this.title = title;
@@ -21,6 +21,10 @@ public class Book {
     this.publisher = publisher;
     this.ISBN = ISBN;
     this.pictureLink = pictureLink;
+  }
+
+  public void setId(int id) {
+    this.id = id;
   }
 
   public void setCommentLink(String commentLink) {
