@@ -83,8 +83,30 @@
 
     <h1>Pridať komentár</h1>
     <form class="w3-container" method="post" th:action="@{/postComment}" th:object="${comment}">
-        <textarea cols="60" id="text" name="text" rows="10" type="text"></textarea>
+        <textarea cols="60" name="text" rows="10" type="text"></textarea>
+        <br>
+        <p>Hodnotenie</p>
+        <label>
+            <input type="radio" name="rating" value="1"/>1
+        </label>
+        <label>
+            <input type="radio" name="rating" value="2"/>2
+        </label>
+        <label>
+            <input type="radio" name="rating" value="3"/>3
+        </label>
+        <label>
+            <input type="radio" name="rating" value="4"/>4
+        </label>
+        <label>
+            <input type="radio" name="rating" value="5"/>5
+        </label>
+        <br>
+        <p>Spoiler</p>
+        <input type="checkbox" name="spoiler"/>
+        <br>
         <button class="w3-button w3-red w3-round-large login-button" type="submit">Pridať komentár</button>
+        <br>
     </form>
     </p>
 </article>

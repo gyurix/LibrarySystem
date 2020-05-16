@@ -78,9 +78,7 @@ public class CommentsController {
       comment.setAddedDate(getNow());
       comment.setName("N/A");
       comment.setBookId(Integer.parseInt((String) session.getAttribute("bookId")));
-      comment.setRating(3);
       comment.setReviewerNote("N/A");
-      comment.setSpoiler(false);
       comment.setUserID(loggedUser.getId());
       SOAPConnector.instance.insertComment(comment);
     } catch (Throwable ignored) {
