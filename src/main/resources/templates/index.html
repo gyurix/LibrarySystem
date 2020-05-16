@@ -11,33 +11,37 @@
 <body>
 
 <header>
-    <nav class="menu">
-        <ul class="menu">
-            <li><a href="/"><strong>Domov</strong></a></li>
-            <li><a href="/bookList">Knižnica</a></li>
-            <li><a href="/comments">Komentáre</a></li>
-            <li><a href="#">Moje výpožičky</a></li>
-            <li><a href="/about">O nás</a></li>
-            <li><a href="#">Kontakt</a></li>
-            <li><a href="/login" th:href="${loginPath}" th:text="${loginButton}">Prihlásiť sa</a></li>
-        </ul>
+    <nav>
+        <div class="header-div">
+            <ul class="menu">
+                <li><a href="/"><strong>Domov</strong></a></li>
+                <li><a href="/bookList">Knižnica</a></li>
+                <li><a href="/comments">Komentáre</a></li>
+                <li><a href="/about">Moje výpožičky</a></li>
+                <li><a href="/about">O nás</a></li>
+                <li><a href="/about">Kontakt</a></li>
+                <li><a href="/login" th:text="${loginButton}">Prihlásiť sa</a></li>
+            </ul>
+        </div>
     </nav>
 </header>
 
 <article>
-    <h1 th:text="${welcomeHeader}">Informačný systém knižnice</h1>
+    <div>
+        <h1 th:text="${welcomeHeader}">Informačný systém knižnice</h1>
 
-    <h2 th:text="${titleSubheader}">
-        Pre vstup do knižnice kliknite na tlačidlo Prihlásiť sa
-    </h2>
+        <h2 th:text="${titleSubheader}">
+            Pre vstup do knižnice kliknite na tlačidlo Prihlásiť sa
+        </h2>
 
-    <a class="btn" href="/comments" th:text="${buttonText}">Prihlásiť sa</a>
+        <a class="btn" href="/comments" th:text="${buttonText}">Prihlásiť sa</a>
 
-    <p th:text="${indexParagraph}">
-        Po prihlásení, môžete spravovať svoje výpožičky a pridávať komentáre.
-    </p>
+        <p th:text="${indexParagraph}">
+            Po prihlásení, môžete spravovať svoje výpožičky a pridávať komentáre.
+        </p>
+    </div>
 </article>
-<footer>COPYRIGHT</footer>
+<footer>COPYRIGHT 2020</footer>
 
 </body>
 

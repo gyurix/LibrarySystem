@@ -1,15 +1,25 @@
 body {
     color: #fff;
-    background: #8FD2D1;
+    background: url("../img/bg.jpg");
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
     text-align: center;
     margin: 0;
 }
 
+div {
+    background-color: #A86A4B80;
+    margin: 0 10% 0 10%;
+}
+
 header {
-    background: #fff;
-    border-bottom: 1px solid black;
+    background: #00000080;
+}
+
+.header-div {
+    margin: 0 30% 0 30%;
+    background: #FFDD9B;
+    border-radius: 0 0 10px 10px;
 }
 
 a {
