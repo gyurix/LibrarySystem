@@ -45,7 +45,7 @@ public class SignupController {
 
         User user = new User();
         user.setEmail(email);
-        user.setType(1);
+        user.setType(gyurix.librarysystem.models.User.USER_TYPE.READER.getTypeInt());
         user.setPasswordHash(passwordHashString);
         user.setName(name + " " + lastname);
 

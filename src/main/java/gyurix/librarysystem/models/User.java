@@ -71,6 +71,10 @@ public class User {
 
     private int type;
 
+    public int getTypeInt() {
+      return type;
+    }
+
     USER_TYPE(int type) {
       this.type = type;
     }

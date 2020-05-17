@@ -2,6 +2,7 @@ package gyurix.librarysystem.controllers;
 
 import gyurix.librarysystem.SOAPConnector;
 import gyurix.librarysystem.models.LoggedUser;
+import gyurix.librarysystem.models.User;
 import gyurix.librarysystem.services.book.Book;
 import gyurix.librarysystem.services.comment.Comment;
 import gyurix.librarysystem.services.comment.Komentar;
@@ -83,7 +84,7 @@ public class CommentsController {
             Users loggedUser = (Users) session.getAttribute(LoggedUser.LOGGED_USER_ATTRIB);
             String commentText = comment.getText().toLowerCase();
             message = false;
-            if (loggedUser.getType() == 1) {
+            if (loggedUser.getType() == User.USER_TYPE.READER.getTypeInt()) {
                 for (String s : explicitTerms) {
                     if (commentText.contains(s)) {
                         message = true;

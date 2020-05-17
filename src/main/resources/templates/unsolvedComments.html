@@ -43,7 +43,9 @@
                 padding: 8px;
             }
 
-            tr:nth-child(even){background-color: 00FFFF}
+            tr:nth-child(even) {
+                background-color: 00 FFFF
+            }
 
             th {
                 background-color: #4CAF50;
@@ -56,12 +58,12 @@
     <div class="table-users">
         <table cellspacing="0">
             <tr>
-                <th> </th>
+                <th></th>
                 <th>ID</th>
                 <th>Autor</th>
                 <th>Kniha</th>
-                <th>Text</th>
                 <th>Spoiler</th>
+                <th>Text</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -69,16 +71,22 @@
             <tbody>
             <tr th:each="comment : ${commentList}">
 
-                <td></td>
-                <td><span>[[${comment.id}]]</span></td>
-                <td><span>[[${comment.userName}]]</span></td>
-                <td><span>[[${comment.bookName}]]</span></td>
-                <td><span>[[${comment.spoiler ? "Áno" : "Nie"}]]</span></td>
-                <td><span>[[${comment.text}]]</span></td>
-                <form class="w3-container" method="post" th:object="${comment.id}" th:action="@{/confirmComment}">
-                <td><button class="w3-button w3-red w3-round-large confirm_comment-button" type="submit">Potvrdit</button></td>
+                <form class="w3-container" method="post" th:object="${comment}" th:action="@{/confirmComment}">
+                    <td></td>
+                    <td><span>[[${comment.id}]]</span></td>
+                    <td><span>[[${comment.userName}]]</span></td>
+                    <td><span>[[${comment.bookName}]]</span></td>
+                    <td><span>[[${comment.spoiler ? "Áno" : "Nie"}]]</span></td>
+                    <td><span>[[${comment.text}]]</span></td>
+
+                    <td>
+                        <a th:href="'/confirmComment?commentId=' + ${comment.id}" class="btn">Potvrdit
+                        </a>
+                    </td>
                 </form>
-                <td><button class="w3-button w3-red w3-round-large confirm_comment-button" type="submit">Detail</button></td>
+                <td>
+                    <button class="w3-button w3-red w3-round-large confirm_comment-button" type="submit">Detail</button>
+                </td>
             </tr>
             </tbody>
 

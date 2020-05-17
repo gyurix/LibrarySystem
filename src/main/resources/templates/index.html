@@ -17,10 +17,8 @@
                 <li><a href="/"><strong>Domov</strong></a></li>
                 <li><a href="/bookList">Knižnica</a></li>
                 <li><a href="/comments">Komentáre</a></li>
-                <li><a href="/about">Moje výpožičky</a></li>
                 <li><a href="/about">O nás</a></li>
-                <li><a href="/about">Kontakt</a></li>
-                <li><a href="/login" th:text="${loginButton}">Prihlásiť sa</a></li>
+                <li><a th:href="${loginPath}" th:text="${loginButton}">Prihlásiť sa</a></li>
             </ul>
         </div>
     </nav>
@@ -34,7 +32,7 @@
             Pre vstup do knižnice kliknite na tlačidlo Prihlásiť sa
         </h2>
 
-        <a class="btn" href="/unsolvedComments" th:text="${buttonText}">Prihlásiť sa</a>
+        <a class="btn" th:href="${path}" th:text="${buttonText}">Prihlásiť sa</a>
 
         <p th:text="${indexParagraph}">
             Po prihlásení, môžete spravovať svoje výpožičky a pridávať komentáre.

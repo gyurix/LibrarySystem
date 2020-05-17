@@ -14,7 +14,7 @@ import java.util.List;
 @Controller
 public class BookListController {
     private static final String BOOK_LIST_HTML = "bookList";
-    private static final String BOOK_LIST_PATH = "/bookList";
+    public static final String BOOK_LIST_PATH = "/bookList";
 
     @RequestMapping(BOOK_LIST_PATH)
     public String getBookList(Model model, HttpSession session) {
