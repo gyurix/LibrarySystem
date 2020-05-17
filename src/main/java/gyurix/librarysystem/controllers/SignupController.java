@@ -3,6 +3,7 @@ package gyurix.librarysystem.controllers;
 import gyurix.librarysystem.SOAPConnector;
 import gyurix.librarysystem.models.SignupFormModel;
 import gyurix.librarysystem.services.user.User;
+import gyurix.librarysystem.services.validator.ValidateEmailResponse;
 import gyurix.librarysystem.tools.PasswordManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,8 +30,10 @@ public class SignupController {
     String name = model.getName();
     String lastname = model.getLastname();
 
+    boolean isEmail = SOAPConnector.instance.validateEmail(email).isSuccess();
+
     if (
-      !email.isEmpty() &&
+      isEmail &&
         !password.isEmpty() &&
         !passwordCheck.isEmpty() &&
         !name.isEmpty() &&

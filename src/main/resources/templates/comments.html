@@ -76,7 +76,7 @@
         <p>
 
         <div class="comment-div">
-            <h1>Pridať komentár</h1>
+            <h1 th:text="${message}">Pridať komentár</h1>
             <form class="w3-container" method="post" th:action="@{/postComment}" th:object="${comment}">
                 <textarea cols="60" name="text" rows="10" type="text"></textarea>
                 <br>

@@ -4,6 +4,8 @@ import gyurix.librarysystem.services.book.*;
 import gyurix.librarysystem.services.comment.*;
 import gyurix.librarysystem.services.email.Notify;
 import gyurix.librarysystem.services.email.NotifyResponse;
+import gyurix.librarysystem.services.explicit_terms.Explicittermss;
+import gyurix.librarysystem.services.explicit_terms.GetAll;
 import gyurix.librarysystem.services.user.ArrayOfIds;
 import gyurix.librarysystem.services.user.GetByAttributeValue;
 import gyurix.librarysystem.services.user.GetByAttributeValueResponse;
@@ -12,6 +14,8 @@ import gyurix.librarysystem.services.user.InsertResponse;
 import gyurix.librarysystem.services.user.Update;
 import gyurix.librarysystem.services.user.UpdateResponse;
 import gyurix.librarysystem.services.user.*;
+import gyurix.librarysystem.services.validator.ValidateEmail;
+import gyurix.librarysystem.services.validator.ValidateEmailResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
@@ -25,9 +29,11 @@ import java.util.List;
 public class SOAPConnector extends WebServiceGatewaySupport {
   public static final String DB_WSDL_URL = "http://pis.predmety.fiit.stuba.sk/pis/ws/Students/Team115User";
   public static final String EMAIL_WSDL_URL = "http://pis.predmety.fiit.stuba.sk/pis/ws/NotificationServices/Email";
+  public static final String VALIDATE_WSDL_URL = "http://pis.predmety.fiit.stuba.sk/pis/ws/Validator";
   public static final String TEAM_ID = "115";
   public static final String TEAM_PASSWORD = "ZF4XPV";
   private static final Logger log = LoggerFactory.getLogger(SOAPConnector.class);
+  private static final String DB_EXPLICIT_TERMS_WSDL_URL = "http://pis.predmety.fiit.stuba.sk/pis/ws/Students/Team115ExplicitTerms";
   public static SOAPConnector instance;
 
   public SOAPConnector() {
@@ -211,6 +217,25 @@ public class SOAPConnector extends WebServiceGatewaySupport {
 
     return ((JAXBElement<NotifyResponse>) getWebServiceTemplate().marshalSendAndReceive("http://pis.predmety.fiit.stuba.sk/pis/ws/NotificationServices/Email", notify)).getValue();
 
+  }
+
+  public ValidateEmailResponse validateEmail(String email) {
+    ValidateEmail validateEmail = new ValidateEmail();
+    validateEmail.setEmail(email);
+
+    return ((JAXBElement<ValidateEmailResponse>)getWebServiceTemplate().marshalSendAndReceive(VALIDATE_WSDL_URL, validateEmail)).getValue();
+  }
+  
+  public List<String> getAllExplicitTerms() {
+    gyurix.librarysystem.services.explicit_terms.GetAll getAll = new GetAll();
+    
+    List<Explicittermss> terms = ((JAXBElement<gyurix.librarysystem.services.explicit_terms.GetAllResponse>)getWebServiceTemplate().marshalSendAndReceive(DB_EXPLICIT_TERMS_WSDL_URL, getAll)).getValue().getExplicittermss().getExplicitterm();
+    List<String> explicitTerms = new ArrayList<>();
+    for (Explicittermss t: terms) {
+      explicitTerms.add(t.getName());
+    }
+
+    return explicitTerms;
   }
 
   public <T> T userRequest(Object request, Class<T> responseClass) {
