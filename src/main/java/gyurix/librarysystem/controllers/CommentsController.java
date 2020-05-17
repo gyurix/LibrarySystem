@@ -19,6 +19,7 @@ import javax.servlet.http.HttpSession;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -55,10 +56,34 @@ public class CommentsController {
         } else {
             Book book = SOAPConnector.instance.getBookById(Integer.parseInt(bookId));
             model.addAttribute("title", "Komentáre o knihe " + book.getName());
+            List<Users> usersList = SOAPConnector.instance.getAllUsers().getUsers().getUser();
             List<Comment> commentList = SOAPConnector.instance.getCommentsByBook(Integer.parseInt(bookId));
-            model.addAttribute("commentList", commentList);
+            List<Comment> orderedCommentList = orderCommentsByUser(commentList, usersList);
+            model.addAttribute("commentList", orderedCommentList);
         }
         return HTML;
+    }
+
+    private List<Comment> orderCommentsByUser(List<Comment> commentList, List<Users> usersList) {
+        List<Users> reviewerList = new ArrayList<>();
+        for (Users s : usersList) {
+            if (s.getType() != User.USER_TYPE.READER.getTypeInt()) {
+                reviewerList.add(s);
+            }
+        }
+
+        List<Comment> outputCommentList = new ArrayList<>();
+        for (Comment c : commentList) {
+            if (reviewerList.contains(c.getUserID()))
+                outputCommentList.add(c);
+        }
+
+        for (Comment c : commentList) {
+            if (!outputCommentList.contains(c))
+                outputCommentList.add(c);
+        }
+
+        return outputCommentList;
     }
 
     @SneakyThrows
@@ -92,7 +117,7 @@ public class CommentsController {
                 }
             }
             if (!message) {
-                comment.setAccepted(false);
+                comment.setAccepted(loggedUser.getType() != User.USER_TYPE.READER.getTypeInt());
                 comment.setAcceptedDate(getNow());
                 comment.setAddedDate(getNow());
                 comment.setName("N/A");

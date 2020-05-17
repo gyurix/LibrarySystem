@@ -2,6 +2,7 @@ package gyurix.librarysystem.controllers;
 
 import gyurix.librarysystem.SOAPConnector;
 import gyurix.librarysystem.models.CommentDetailModel;
+import gyurix.librarysystem.models.LoggedUser;
 import gyurix.librarysystem.services.comment.Comment;
 import gyurix.librarysystem.services.comment.Komentar;
 import gyurix.librarysystem.services.user.User;
@@ -13,6 +14,8 @@ import sun.net.httpserver.HttpsServerImpl;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
+
+import static gyurix.librarysystem.controllers.LoginController.LOGIN_HTML;
 
 @Controller
 public class CommentDetailsController {
@@ -30,6 +33,14 @@ public class CommentDetailsController {
 
     @RequestMapping(COMMENT_DETAIL_PATH)
     public String showDetails(HttpSession session, Model model, @RequestParam(name = COMMENT_ID_PARAMETER, defaultValue = DEFAULT_COMMENT_ID) String commentId) {
+        if (session.getAttribute(LoggedUser.LOGGED_USER_ATTRIB) != null) {
+            model.addAttribute("loginButton", "Odhlásiť sa");
+            model.addAttribute("loginPath", "/logout");
+        } else {
+            model.addAttribute("loginButton", "Prihlásiť sa");
+            model.addAttribute("loginPath", "/login");
+            return LOGIN_HTML;
+        }
         Comment comment = SOAPConnector.instance.getCommentById(Integer.parseInt(commentId));
         List<Comment> commentList = new ArrayList<>();
         commentList.add(comment);
@@ -47,6 +58,14 @@ public class CommentDetailsController {
             Model model,
             @RequestParam(name = COMMENT_ID_PARAMETER, defaultValue = DEFAULT_COMMENT_ID) String commentId,
             @ModelAttribute(CommentDetailModel.MODEL_ATTRIB) CommentDetailModel cdm) {
+        if (session.getAttribute(LoggedUser.LOGGED_USER_ATTRIB) != null) {
+            model.addAttribute("loginButton", "Odhlásiť sa");
+            model.addAttribute("loginPath", "/logout");
+        } else {
+            model.addAttribute("loginButton", "Prihlásiť sa");
+            model.addAttribute("loginPath", "/login");
+            return LOGIN_HTML;
+        }
         String adminResponse = cdm.getAdminResponse();
         Comment comment = SOAPConnector.instance.getCommentById(Integer.parseInt(commentId));
         User user = SOAPConnector.instance.getUserById(comment.getUserID()).getUser();
@@ -54,6 +73,8 @@ public class CommentDetailsController {
         SOAPConnector.instance.deleteComment(Integer.parseInt(commentId));
         List<Comment> listOfComments = SOAPConnector.instance.getUnsolvedComments();
         model.addAttribute("commentList", listOfComments);
+
+
 
         return AdminController.UNSOLVED_COMMENTS_LIST_HTML;
     }
@@ -64,6 +85,14 @@ public class CommentDetailsController {
             Model model,
             @RequestParam(name = COMMENT_ID_PARAMETER, defaultValue =  DEFAULT_COMMENT_ID) String commentId,
             @ModelAttribute(CommentDetailModel.MODEL_ATTRIB) CommentDetailModel cdm) {
+        if (session.getAttribute(LoggedUser.LOGGED_USER_ATTRIB) != null) {
+            model.addAttribute("loginButton", "Odhlásiť sa");
+            model.addAttribute("loginPath", "/logout");
+        } else {
+            model.addAttribute("loginButton", "Prihlásiť sa");
+            model.addAttribute("loginPath", "/login");
+            return LOGIN_HTML;
+        }
         String adminResponse = cdm.getAdminResponse();
         Comment comment = SOAPConnector.instance.getCommentById(Integer.parseInt(commentId));
         User user = SOAPConnector.instance.getUserById(comment.getUserID()).getUser();
