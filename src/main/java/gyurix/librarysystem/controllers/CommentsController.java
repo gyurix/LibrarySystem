@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.GregorianCalendar;
@@ -63,7 +64,7 @@ public class CommentsController {
     }
 
     @SneakyThrows
-    public XMLGregorianCalendar getNow() {
+    public XMLGregorianCalendar getNow() throws DatatypeConfigurationException {
         GregorianCalendar gregorianCalendar = new GregorianCalendar();
         DatatypeFactory datatypeFactory = DatatypeFactory.newInstance();
         return datatypeFactory.newXMLGregorianCalendar(gregorianCalendar);

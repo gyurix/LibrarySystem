@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>Informačný systém knižnice</title>
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet" th:href="@{css/style.css}" type="text/css"/>
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+    <nav class="top-bar fixed">
+        <div class="header-div">
+            <ul class="menu">
+                <li><a href="/">Domov</a></li>
+                <li><a href="/bookList">Knižnica</a></li>
+                <li><a href="/comments"><strong>Komentáre</strong></a></li>
+                <li><a href="/about">Moje výpožičky</a></li>
+                <li><a href="/about">O nás</a></li>
+                <li><a href="/about">Kontakt</a></li>
+                <li><a href="/login" th:text="${loginButton}">Prihlásiť sa</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<article>
+    <div>
+        <div class="comment-div">
+            <br>
+            <h1 th:text="${title}">Title</h1>
+            <br>
+        </div>
+
+
+        <table class="w3-table-all w3-card-4 bookTable">
+            <tbody>
+            <tr th:each="comment : ${commentList}">
+                <table class="w3-table-all w3-card-4 bookTable" style="width: 92%;">
+                    <tr>
+                        <td style="background-color: #F7D4C3; width: 20%">
+                            <strong>Kniha: </strong>[[${comment.bookName}]]<br>
+                            <strong>Používateľ: </strong>[[${comment.userName}]]<br>
+                            <strong>Hodnotenie: </strong><br>
+                            <font size="24pt" style="background-color: #51220D" color="#ffdf00">
+                                [[${comment.rating == 5 ? "★★★★★" : comment.rating == 4 ? "★★★★☆" : comment.rating == 3
+                                ?
+                                "★★★☆☆" : comment.rating == 2 ? "★★☆☆☆" : "★☆☆☆☆"}]]
+                            </font><br>
+                            <strong>Spoiler: </strong>[[${comment.spoiler ? "Áno" : "Nie"}]]<br>
+                            <strong>Čas Pridania: </strong><br>
+                            [[${comment.addedDate.toString().replace("T"," ").substring(0,19)}]]<br>
+                            <strong>Akceptované: </strong>[[${comment.accepted ? "Áno" : "Nie"}]]<br>
+                            <strong>Čas akceptovania: </strong><br>
+                            [[${comment.acceptedDate.toString().replace("T"," ").substring(0,19)}]]
+                        </td>
+                        <td>
+                            <pre style="background-color: #EDEDED; padding: 5px">
+[[${comment.text}]]
+
+
+
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+            </tr>
+            </tbody>
+        </table>
+        <p>
+
+        <div class="comment-div">
+            <h1>Poznámka</h1>
+            <form class="w3-container" method="post" th:action="@{/detailComment?commentId=} + ${commentId}" th:object="${commentDetail}">
+                <textarea cols="60" id="adminResponse" name="adminResponse" rows="10" type="text"></textarea>
+                <br>
+                <h3>Hodnotenie
+                    <label>
+                        <input name="rating" type="radio" value="1"/>1
+                    </label>
+                    <label>
+                        <input name="rating" type="radio" value="2"/>2
+                    </label>
+                    <label>
+                        <input name="rating" type="radio" value="3"/>3
+                    </label>
+                    <label>
+                        <input name="rating" type="radio" value="4"/>4
+                    </label>
+                    <label>
+                        <input name="rating" type="radio" value="5"/>5
+                    </label>
+                </h3>
+                <br>
+                <h3>Spoiler
+                    <input name="spoiler" type="checkbox"/>
+                </h3>
+                <br>
+                <button class="btn" type="submit" name="submit">Potvrdit
+                </button>
+                <button class="btn" type="submit" name="delete">Odstrániť
+                </button>
+                <a href="/unsolvedComments" class="btn">Zrušiť
+                </a>
+                <br>
+
+            </form>
+        </div>
+    </div>
+</article>
+<footer>COPYRIGHT 2020</footer>
+
+</body>
+
+</html>

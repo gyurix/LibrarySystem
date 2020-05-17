@@ -85,7 +85,8 @@
                     </td>
                 </form>
                 <td>
-                    <button class="w3-button w3-red w3-round-large confirm_comment-button" type="submit">Detail</button>
+                    <a th:href="'/detailComment?commentId=' + ${comment.id}" class="btn">Detail
+                    </a>
                 </td>
             </tr>
             </tbody>

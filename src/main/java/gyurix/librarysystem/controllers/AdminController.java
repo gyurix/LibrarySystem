@@ -20,7 +20,7 @@ import static gyurix.librarysystem.controllers.LoginController.LOGIN_HTML;
 
 @Controller
 public class AdminController {
-    private static final String UNSOLVED_COMMENTS_LIST_HTML = "unsolvedComments";
+    public static final String UNSOLVED_COMMENTS_LIST_HTML = "unsolvedComments";
     public static final String UNSOLVED_COMMENTS_PATH = "/unsolvedComments";
     public static final String PATH_CONFIRM = "/confirmComment";
 

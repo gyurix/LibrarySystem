@@ -206,6 +206,28 @@ public class SOAPConnector extends WebServiceGatewaySupport {
     return ((JAXBElement<NotifyResponse>) getWebServiceTemplate().marshalSendAndReceive(EMAIL_WSDL_URL, notify)).getValue();
   }
 
+  public NotifyResponse sendCommentDeleteNotify(User u, Comment comment, String adminResponse) {
+    Notify notify = new Notify();
+    notify.setTeamId(TEAM_ID);
+    notify.setPassword(TEAM_PASSWORD);
+    notify.setSubject("[ISK] Vas komentar bol vymazany");
+    notify.setMessage("Vas komentar " + comment.getText() + " bol vymazany administratorom z dovodu :\n" + adminResponse);
+    notify.setEmail(u.getEmail());
+
+    return ((JAXBElement<NotifyResponse>) getWebServiceTemplate().marshalSendAndReceive(EMAIL_WSDL_URL, notify)).getValue();
+  }
+
+  public NotifyResponse sendCommentAcceptNotify(User u, Comment comment) {
+    Notify notify = new Notify();
+    notify.setTeamId(TEAM_ID);
+    notify.setPassword(TEAM_PASSWORD);
+    notify.setSubject("[ISK] Vas komentar bol schvaleny");
+    notify.setMessage("Vas komentar " + comment.getText() + " bol schvaleny administratorom");
+    notify.setEmail(u.getEmail());
+
+    return ((JAXBElement<NotifyResponse>) getWebServiceTemplate().marshalSendAndReceive(EMAIL_WSDL_URL, notify)).getValue();
+  }
+
   public NotifyResponse sendSignupMessage(User user) {
     Notify notify = new Notify();
     notify.setTeamId("115");
