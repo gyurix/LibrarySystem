@@ -44,7 +44,12 @@ public class LoginController {
     }
 
     if (session.getAttribute(LoggedUser.LOGGED_USER_ATTRIB) != null) {
-      model.addAttribute("welcomeHeader", "Vitaj " + loggedUser.getName() + "!");
+      model.addAttribute("welcomeHeader", "Vitaj  " + loggedUser.getName() + "!");
+      if(loggedUser.getType() == 1){
+        model.addAttribute("welcomeHeader", "Vitaj  Admin " + loggedUser.getName() + "!");
+        model.addAttribute("buttonText", "Prejsť na nepotvrdene komentáre");
+
+      }
       model.addAttribute("titleSubheader", "Bol si prihlásený do informačného systému");
       model.addAttribute("buttonText", "Prejsť na komentáre");
       model.addAttribute("loginButton", "Odhlásiť sa");

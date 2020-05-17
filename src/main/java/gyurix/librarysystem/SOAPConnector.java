@@ -108,6 +108,27 @@ public class SOAPConnector extends WebServiceGatewaySupport {
     return out;
   }
 
+  public List<Comment> getUnsolvedComments() {
+    List<Users> users = userRequest(new UserGetAll(), UserGetAllResponse.class).getUsers().getUser();
+    List<Books> books = bookRequest(new BookGetAll(), BookGetAllResponse.class).getBooks().getBook();
+    CommentGetAllResponse comments = commentRequest(new CommentGetAll(), CommentGetAllResponse.class);
+    HashMap<Integer, Books> bookCache = new HashMap<>();
+    HashMap<Integer, Users> userCache = new HashMap<>();
+    books.forEach(b -> bookCache.put(b.getId(), b));
+    users.forEach(u -> userCache.put(u.getId(), u));
+    List<Comment> out = new ArrayList<>();
+    comments.getKomentars().getKomentar().forEach((e) -> {
+      if (!e.isAccepted()) {
+        Books book = bookCache.get(e.getBookId());
+        Users user = userCache.get(e.getUserID());
+        e.setBookName(book == null ? "Unknown Book #" + e.getBookId() : book.getName());
+        e.setUserName(user == null ? "Unknown User #" + user.getId() : user.getName());
+        out.add(e);
+      }
+    });
+    return out;
+  }
+
   public GetByAttributeValueResponse getUser(String email) {
     GetByAttributeValue getByAttributeValue = new GetByAttributeValue();
     getByAttributeValue.setAttributeName("email");
@@ -129,6 +150,24 @@ public class SOAPConnector extends WebServiceGatewaySupport {
     request.setTeamId(TEAM_ID);
     request.setTeamPassword(TEAM_PASSWORD);
     commentRequest(request, CommentInsertResponse.class);
+  }
+
+  public void updateComment(Komentar comment, int entityId){
+    CommentUpdate request = new CommentUpdate();
+    request.setEntityId(entityId);
+    request.setKomentar(comment);
+    request.setTeamId(TEAM_ID);
+    request.setTeamPassword(TEAM_PASSWORD);
+    commentRequest(request, CommentUpdateResponse.class);
+  }
+
+  public Comment getCommentById(int commentId) {
+    CommentGetAllResponse comments = commentRequest(new CommentGetAll(), CommentGetAllResponse.class);
+     Comment out = null;
+    for (Comment e : comments.getKomentars().getKomentar()) {
+      if (e.getId() == commentId) out = e;
+    }
+    return out;
   }
 
   public InsertResponse insertUser(User user) {

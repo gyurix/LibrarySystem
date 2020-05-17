@@ -5,23 +5,25 @@
     <meta charset="utf-8">
     <title>Informačný systém knižnice</title>
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-    <link href="../static/css/style.css" rel="stylesheet" th:href="@{css/style.css}" type="text/css" />
+    <link href="../static/css/style.css" rel="stylesheet" th:href="@{css/style.css}" type="text/css"/>
     <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
 </head>
 
 <body>
 
 <header>
-    <nav class="menu">
-        <ul class="menu">
-            <li><a href="/">Domov</a></li>
-            <li><a href="/bookList">Knižnica</a></li>
-            <li><a href="#">Komentáre</a></li>
-            <li><a href="#">Moje výpožičky</a></li>
-            <li><a href="/about">O nás</a></li>
-            <li><a href="#">Kontakt</a></li>
-            <li><a th:text="${loginButton}" th:href="@{loginPath}">Prihlásiť sa</a></li>
-        </ul>
+    <nav class="top-bar fixed">
+        <div class="header-div">
+            <ul class="menu">
+                <li><a href="/">Domov</a></li>
+                <li><a href="/bookList">Knižnica</a></li>
+                <li><a href="/comments"><strong>Komentáre</strong></a></li>
+                <li><a href="/about">Moje výpožičky</a></li>
+                <li><a href="/about">O nás</a></li>
+                <li><a href="/about">Kontakt</a></li>
+                <li><a href="/login" th:text="${loginButton}">Prihlásiť sa</a></li>
+            </ul>
+        </div>
     </nav>
 </header>
 
@@ -41,7 +43,7 @@
                 padding: 8px;
             }
 
-            tr:nth-child(even){background-color: #99e6ff}
+            tr:nth-child(even){background-color: 00FFFF}
 
             th {
                 background-color: #4CAF50;
@@ -55,6 +57,7 @@
         <table cellspacing="0">
             <tr>
                 <th> </th>
+                <th>ID</th>
                 <th>Autor</th>
                 <th>Kniha</th>
                 <th>Text</th>
@@ -65,21 +68,22 @@
 
             <tbody>
             <tr th:each="comment : ${commentList}">
+
                 <td></td>
-                <td><span th:text="${comment.author}"></span></td>
-                <td><span th:text="${comment.bookName}"></span></td>
-                <td><span th:text="${comment.text}"></span></td>
-                <td><span th:text="${comment.spoiler}"></span></td>
+                <td><span>[[${comment.id}]]</span></td>
+                <td><span>[[${comment.userName}]]</span></td>
+                <td><span>[[${comment.bookName}]]</span></td>
+                <td><span>[[${comment.spoiler ? "Áno" : "Nie"}]]</span></td>
+                <td><span>[[${comment.text}]]</span></td>
+                <form class="w3-container" method="post" th:object="${comment.id}" th:action="@{/confirmComment}">
                 <td><button class="w3-button w3-red w3-round-large confirm_comment-button" type="submit">Potvrdit</button></td>
-                <td><button class="w3-button w3-red w3-round-large detail_comment-button" type="submit">Detail</button></td>
+                </form>
+                <td><button class="w3-button w3-red w3-round-large confirm_comment-button" type="submit">Detail</button></td>
             </tr>
             </tbody>
 
         </table>
     </div>
-
-
-
 
 </article>
 <footer>COPYRIGHT</footer>
