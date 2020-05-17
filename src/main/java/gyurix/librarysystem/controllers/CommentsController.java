@@ -6,8 +6,6 @@ import gyurix.librarysystem.models.User;
 import gyurix.librarysystem.services.book.Book;
 import gyurix.librarysystem.services.comment.Comment;
 import gyurix.librarysystem.services.comment.Komentar;
-import gyurix.librarysystem.services.explicit_terms.ExplicitTerms;
-import gyurix.librarysystem.services.explicit_terms.Explicittermss;
 import gyurix.librarysystem.services.user.Users;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Controller;

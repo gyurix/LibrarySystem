@@ -65,11 +65,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Explicitterms }
+     * Create an instance of {@link ExplicitTerms }
      * 
      */
-    public Explicitterms createExplicitterms() {
-        return new Explicitterms();
+    public ExplicitTerms createExplicitterms() {
+        return new ExplicitTerms();
     }
 
     /**
@@ -218,12 +218,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Explicitterms }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ExplicitTerms }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://pis.predmety.fiit.stuba.sk/pis/students/team115explicitterms/types", name = "Explicitterms")
-    public JAXBElement<Explicitterms> createExplicitterms(Explicitterms value) {
-        return new JAXBElement<Explicitterms>(_Explicitterms_QNAME, Explicitterms.class, null, value);
+    public JAXBElement<ExplicitTerms> createExplicitterms(ExplicitTerms value) {
+        return new JAXBElement<ExplicitTerms>(_Explicitterms_QNAME, ExplicitTerms.class, null, value);
     }
 
     /**
