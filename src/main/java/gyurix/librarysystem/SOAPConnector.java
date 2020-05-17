@@ -4,6 +4,8 @@ import gyurix.librarysystem.services.book.*;
 import gyurix.librarysystem.services.comment.*;
 import gyurix.librarysystem.services.email.Notify;
 import gyurix.librarysystem.services.email.NotifyResponse;
+import gyurix.librarysystem.services.explicit_terms.Explicittermss;
+import gyurix.librarysystem.services.explicit_terms.GetAll;
 import gyurix.librarysystem.services.user.ArrayOfIds;
 import gyurix.librarysystem.services.user.GetByAttributeValue;
 import gyurix.librarysystem.services.user.GetByAttributeValueResponse;
@@ -31,6 +33,7 @@ public class SOAPConnector extends WebServiceGatewaySupport {
   public static final String TEAM_ID = "115";
   public static final String TEAM_PASSWORD = "ZF4XPV";
   private static final Logger log = LoggerFactory.getLogger(SOAPConnector.class);
+  private static final String DB_EXPLICIT_TERMS_WSDL_URL = "http://pis.predmety.fiit.stuba.sk/pis/ws/Students/Team115ExplicitTerms";
   public static SOAPConnector instance;
 
   public SOAPConnector() {
@@ -182,6 +185,18 @@ public class SOAPConnector extends WebServiceGatewaySupport {
     validateEmail.setEmail(email);
 
     return ((JAXBElement<ValidateEmailResponse>)getWebServiceTemplate().marshalSendAndReceive(VALIDATE_WSDL_URL, validateEmail)).getValue();
+  }
+  
+  public List<String> getAllExplicitTerms() {
+    gyurix.librarysystem.services.explicit_terms.GetAll getAll = new GetAll();
+    
+    List<Explicittermss> terms = ((JAXBElement<gyurix.librarysystem.services.explicit_terms.GetAllResponse>)getWebServiceTemplate().marshalSendAndReceive(DB_EXPLICIT_TERMS_WSDL_URL, getAll)).getValue().getExplicittermss().getExplicitterm();
+    List<String> explicitTerms = new ArrayList<>();
+    for (Explicittermss t: terms) {
+      explicitTerms.add(t.getName());
+    }
+
+    return explicitTerms;
   }
 
   public <T> T userRequest(Object request, Class<T> responseClass) {
