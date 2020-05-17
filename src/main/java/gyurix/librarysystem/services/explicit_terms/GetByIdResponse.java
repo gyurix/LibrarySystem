@@ -40,17 +40,17 @@ import javax.xml.bind.annotation.XmlType;
 public class GetByIdResponse {
 
     @XmlElement(required = true)
-    protected Explicitterms explicitterms;
+    protected ExplicitTerms explicitterms;
 
     /**
      * Gets the value of the explicitterms property.
      * 
      * @return
      *     possible object is
-     *     {@link Explicitterms }
+     *     {@link ExplicitTerms }
      *     
      */
-    public Explicitterms getExplicitterms() {
+    public ExplicitTerms getExplicitterms() {
         return explicitterms;
     }
 
@@ -59,10 +59,10 @@ public class GetByIdResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link Explicitterms }
+     *     {@link ExplicitTerms }
      *     
      */
-    public void setExplicitterms(Explicitterms value) {
+    public void setExplicitterms(ExplicitTerms value) {
         this.explicitterms = value;
     }
 
