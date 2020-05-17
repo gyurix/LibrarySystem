@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="Validator" targetNamespace="http://pis.predmety.fiit.stuba.sk/pis/validator" xmlns:tns="http://pis.predmety.fiit.stuba.sk/pis/validator" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://pis.predmety.fiit.stuba.sk/pis/validator/types">
+  <types>
+    <xsd:schema targetNamespace="http://pis.predmety.fiit.stuba.sk/pis/validator/types" xmlns="http://pis.predmety.fiit.stuba.sk/pis/validator/types">
+      <xsd:complexType name="validateEmail">
+        <xsd:sequence>
+          <xsd:element name="email" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="validateEmail" nillable="true" type="ns:validateEmail"/>
+      <xsd:complexType name="validateEmailResponse">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="validateEmailResponse" nillable="true" type="ns:validateEmailResponse"/>
+      <xsd:complexType name="validatePhone">
+        <xsd:sequence>
+          <xsd:element name="phone" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="validatePhone" nillable="true" type="ns:validatePhone"/>
+      <xsd:complexType name="validatePhoneResponse">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="validatePhoneResponse" nillable="true" type="ns:validatePhoneResponse"/>
+    </xsd:schema>
+  </types>
+  <message name="validateEmailRequest">
+    <part name="parameters" element="ns:validateEmail"/>
+  </message>
+  <message name="validateEmailResponse">
+    <part name="parameters" element="ns:validateEmailResponse"/>
+  </message>
+  <message name="validatePhoneRequest">
+    <part name="parameters" element="ns:validatePhone"/>
+  </message>
+  <message name="validatePhoneResponse">
+    <part name="parameters" element="ns:validatePhoneResponse"/>
+  </message>
+  <portType name="ValidatorPortType">
+    <operation name="validateEmail">
+      <input message="tns:validateEmailRequest"/>
+      <output message="tns:validateEmailResponse"/>
+    </operation>
+    <operation name="validatePhone">
+      <input message="tns:validatePhoneRequest"/>
+      <output message="tns:validatePhoneResponse"/>
+    </operation>
+  </portType>
+  <binding name="ValidatorBinding" type="tns:ValidatorPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="validateEmail">
+      <soap:operation soapAction="http://pis.predmety.fiit.stuba.sk/pis/validator/#validateEmail"/>
+      <input>
+        <soap:body use="literal" namespace="http://pis.predmety.fiit.stuba.sk/pis/validator"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://pis.predmety.fiit.stuba.sk/pis/validator"/>
+      </output>
+    </operation>
+    <operation name="validatePhone">
+      <soap:operation soapAction="http://pis.predmety.fiit.stuba.sk/pis/validator/#validatePhone"/>
+      <input>
+        <soap:body use="literal" namespace="http://pis.predmety.fiit.stuba.sk/pis/validator"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://pis.predmety.fiit.stuba.sk/pis/validator"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ValidatorService">
+    <port name="ValidatorPort" binding="tns:ValidatorBinding">
+      <soap:address location="http://pis.predmety.fiit.stuba.sk/pis/ws/Validator"/>
+    </port>
+  </service>
+</definitions>
