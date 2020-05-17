@@ -12,49 +12,51 @@
 <body>
 
 <header>
-    <nav>
-        <ul class="menu">
-            <li><a href="/">Domov</a></li>
-            <li><a href="/bookList"><strong>Knižnica</strong></a></li>
-            <li><a href="/comments">Komentáre</a></li>
-            <li><a href="#">Moje výpožičky</a></li>
-            <li><a href="/about">O nás</a></li>
-            <li><a href="#">Kontakt</a></li>
-            <li><a href="/login" th:text="${loginButton}">Prihlásiť sa</a></li>
-        </ul>
+    <nav class="top-bar fixed">
+        <div class="header-div">
+            <ul class="menu">
+                <li><a href="/">Domov</a></li>
+                <li><a href="/bookList"><strong>Knižnica</strong></a></li>
+                <li><a href="/comments">Komentáre</a></li>
+                <li><a href="#">Moje výpožičky</a></li>
+                <li><a href="/about">O nás</a></li>
+                <li><a href="#">Kontakt</a></li>
+                <li><a href="/login" th:text="${loginButton}">Prihlásiť sa</a></li>
+            </ul>
+        </div>
     </nav>
 </header>
 
 <article>
-    <h1>Dostupné knihy</h1>
+    <div>
+        <h1>Dostupné knihy</h1>
 
 
-    <table class="w3-table-all w3-card-4 bookTable">
-        <thead>
-        <tr>
-            <th> ID</th>
-            <th> Obálka</th>
-            <th> Názov</th>
-            <th> Autor</th>
-            <th> Rok vydania</th>
-            <th> Vydavateľstvo</th>
-            <th> ISBN</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="book : ${bookList}">
-            <td><span th:text="${book.id} + '.'"></span></td>
-            <td><img height="150px" th:src="${book.pictureLink}"></td>
-            <td><a th:href="${book.commentLink}" th:text="${book.title}"></a></td>
-            <td><span th:text="${book.author}"></span></td>
-            <td><span th:text="${book.year}"></span></td>
-            <td><span th:text="${book.publisher}"></span></td>
-            <td><span th:text="${book.ISBN}"></span></td>
-        </tr>
-        </tbody>
-    </table>
+        <table class="w3-table-all w3-card-4 bookTable">
+            <thead>
+            <tr>
+                <th> Obálka</th>
+                <th> Názov</th>
+                <th> Autor</th>
+                <th> Rok vydania</th>
+                <th> Vydavateľstvo</th>
+                <th> ISBN</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="book : ${bookList}">
+                <td><img height="150px" th:src="${book.pictureLink}"></td>
+                <td><a th:href="${book.commentLink}" th:text="${book.title}"></a></td>
+                <td><span th:text="${book.author}"></span></td>
+                <td><span th:text="${book.year}"></span></td>
+                <td><span th:text="${book.publisher}"></span></td>
+                <td><span th:text="${book.ISBN}"></span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </article>
-<footer>COPYRIGHT</footer>
+<footer>COPYRIGHT 2020</footer>
 
 </body>
 

@@ -12,83 +12,103 @@
 <body>
 
 <header>
-    <nav>
-        <ul class="menu">
-            <li><a href="/">Domov</a></li>
-            <li><a href="/bookList"><strong>Knižnica</strong></a></li>
-            <li><a href="#">Komentáre</a></li>
-            <li><a href="#">Moje výpožičky</a></li>
-            <li><a href="/about">O nás</a></li>
-            <li><a href="#">Kontakt</a></li>
-            <li><a href="/login" th:text="${loginButton}">Prihlásiť sa</a></li>
-        </ul>
+    <nav class="top-bar fixed">
+        <div class="header-div">
+            <ul class="menu">
+                <li><a href="/">Domov</a></li>
+                <li><a href="/bookList">Knižnica</a></li>
+                <li><a href="/comments"><strong>Komentáre</strong></a></li>
+                <li><a href="/about">Moje výpožičky</a></li>
+                <li><a href="/about">O nás</a></li>
+                <li><a href="/about">Kontakt</a></li>
+                <li><a href="/login" th:text="${loginButton}">Prihlásiť sa</a></li>
+            </ul>
+        </div>
     </nav>
 </header>
 
 <article>
-    <h3 th:text="${title}">Title</h3>
+    <div>
+        <div class="comment-div">
+            <br>
+            <h1 th:text="${title}">Title</h1>
+            <br>
+        </div>
 
 
-    <table class="w3-table-all w3-card-4 bookTable">
-        <thead>
-        <tr>
-            <th> Kommentáre</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="comment : ${commentList}">
-            <table width="80%" class="w3-table-all w3-card-4 bookTable">
-                <thead>
-                <tr>
-                    <th>Kommentár</th>
-                </tr>
-                </thead>
+        <table class="w3-table-all w3-card-4 bookTable">
+            <tbody>
+            <tr th:each="comment : ${commentList}">
+                <table class="w3-table-all w3-card-4 bookTable" style="width: 92%;">
+                    <tr>
+                        <td style="background-color: #F7D4C3; width: 20%">
+                            <strong>Kniha: </strong>[[${comment.bookName}]]<br>
+                            <strong>Používateľ: </strong>[[${comment.userName}]]<br>
+                            <strong>Hodnotenie: </strong><br>
+                            <font size="24pt" style="background-color: #51220D" color="#ffdf00">
+                                [[${comment.rating == 5 ? "★★★★★" : comment.rating == 4 ? "★★★★☆" : comment.rating == 3
+                                ?
+                                "★★★☆☆" : comment.rating == 2 ? "★★☆☆☆" : "★☆☆☆☆"}]]
+                            </font><br>
+                            <strong>Spoiler: </strong>[[${comment.spoiler ? "Áno" : "Nie"}]]<br>
+                            <strong>Čas Pridania: </strong><br>
+                            [[${comment.addedDate.toString().replace("T"," ").substring(0,19)}]]<br>
+                            <strong>Akceptované: </strong>[[${comment.accepted ? "Áno" : "Nie"}]]<br>
+                            <strong>Čas akceptovania: </strong><br>
+                            [[${comment.acceptedDate.toString().replace("T"," ").substring(0,19)}]]
+                        </td>
+                        <td>
+                            <pre style="background-color: #EDEDED; padding: 5px">
+[[${comment.text}]]
 
-                <tr>
-                    <td>Kniha</td>
-                    <td colspan="3"><span th:text="${comment.bookName}"></span></td>
-                </tr>
-                <tr>
-                    <td>Hodnotenie</td>
-                    <td colspan="3"><span th:text="${comment.rating}"></span></td>
-                </tr>
-                <tr>
-                    <td colspan="4"><span th:text="${comment.text}"></span></td>
-                </tr>
-                <tr>
-                    <td>Pridal</td>
-                    <td><span th:text="${comment.userName}"></span></td>
-                    <td>o</td>
-                    <td><span th:text="${comment.addedDate}"></span></td>
-                </tr>
-                <tr>
-                    <td>Poznamka</td>
-                    <td colspan="3"><span th:text="${comment.reviewerNote}"></span></td>
-                </tr>
-                <tr>
-                    <td>Akceptované</td>
-                    <td><span th:text="${comment.accepted}"></span></td>
-                    <td>o</td>
-                    <td><span th:text="${comment.acceptedDate}"></span></td>
-                </tr>
-                <tr>
-                    <td>Spoiler</td>
-                    <td><span th:text="${comment.spoiler}"></span></td>
-                </tr>
-            </table>
-        </tr>
-        </tbody>
-    </table>
-    <p>
 
-    <h1>Pridať komentár</h1>
-    <form class="w3-container" method="post" th:action="@{/postComment}" th:object="${comment}">
-        <textarea cols="60" id="text" name="text" rows="10" type="text"></textarea>
-        <button class="w3-button w3-red w3-round-large login-button" type="submit">Pridať komentár</button>
-    </form>
-    </p>
+
+                            </pre>
+                            <br>
+                            <strong>Poznámka od admin:</strong><br>
+                            [[${comment.reviewerNote}]]
+                        </td>
+                    </tr>
+                </table>
+            </tr>
+            </tbody>
+        </table>
+        <p>
+
+        <div class="comment-div">
+            <h1>Pridať komentár</h1>
+            <form class="w3-container" method="post" th:action="@{/postComment}" th:object="${comment}">
+                <textarea cols="60" name="text" rows="10" type="text"></textarea>
+                <br>
+                <h3>Hodnotenie
+                    <label>
+                        <input name="rating" type="radio" value="1"/>1
+                    </label>
+                    <label>
+                        <input name="rating" type="radio" value="2"/>2
+                    </label>
+                    <label>
+                        <input name="rating" type="radio" value="3"/>3
+                    </label>
+                    <label>
+                        <input name="rating" type="radio" value="4"/>4
+                    </label>
+                    <label>
+                        <input name="rating" type="radio" value="5"/>5
+                    </label>
+                </h3>
+                <br>
+                <h3>Spoiler
+                    <input name="spoiler" type="checkbox"/>
+                </h3>
+                <br>
+                <button class="w3-button w3-red w3-round-large login-button" type="submit">Pridať komentár</button>
+                <br>
+            </form>
+        </div>
+    </div>
 </article>
-<footer>COPYRIGHT</footer>
+<footer>COPYRIGHT 2020</footer>
 
 </body>
 

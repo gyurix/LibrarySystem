@@ -11,25 +11,29 @@
 <body>
 
 <header>
-    <nav>
-        <ul class="menu">
-            <li><a href="/">Domov</a></li>
-            <li><a href="/bookList">Knižnica</a></li>
-            <li><a href="#">Komentáre</a></li>
-            <li><a href="#">Moje výpožičky</a></li>
-            <li><a href="/about">O nás</a></li>
-            <li><a href="#">Kontakt</a></li>
-            <li><a href="/login" th:text="${loginButton}">Prihlásiť sa</a></li>
-        </ul>
+    <nav class="top-bar fixed">
+        <div class="header-div">
+            <ul class="menu">
+                <li><a href="/"><strong>Domov</strong></a></li>
+                <li><a href="/bookList">Knižnica</a></li>
+                <li><a href="/comments">Komentáre</a></li>
+                <li><a href="/about">Moje výpožičky</a></li>
+                <li><a href="/about">O nás</a></li>
+                <li><a href="/about">Kontakt</a></li>
+                <li><a href="/login" th:text="${loginButton}">Prihlásiť sa</a></li>
+            </ul>
+        </div>
     </nav>
 </header>
 
 <article>
-    <h1><span th:text="${title}"></span></h1>
+    <div>
+        <h1><span th:text="${title}"></span></h1>
 
-    <h4 th:text="${message}"></h4>
+        <h4 th:text="${message}"></h4>
+    </div>
 </article>
-<footer>COPYRIGHT</footer>
+<footer>COPYRIGHT 2020</footer>
 
 </body>
 
